@@ -1,0 +1,10 @@
+{
+  "extensionName": {
+    "message": "Privacomply AI",
+    "description": "Name of the extension"
+  },
+  "extensionDescription": {
+    "message": "Automated GDPR and PDPA compliance checker for websites",
+    "description": "Description of the extension"
+  }
+}

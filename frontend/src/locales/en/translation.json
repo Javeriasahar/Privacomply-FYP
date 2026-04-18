@@ -1,0 +1,137 @@
+{
+  "common": {
+    "scan": "Check Compliance",
+    "enforceCookieProtection": "Enforce Cookie Protection",
+    "scanning": "Scanning...",
+    "compliant": "Compliant",
+    "nonCompliant": "Non-Compliant",
+    "unknown": "Unknown",
+    "save": "Save Settings",
+    "cancel": "Cancel",
+    "settings": "Settings",
+    "language": "Language",
+    "theme": "Theme",
+    "loading": "Loading...",
+    "error": "Error occurred",
+    "tryAgain": "Try Again"
+  },
+  "popup": {
+    "header": "Privacomply",
+    "noResults": "No scan results yet. Click 'Scan Website' to begin.",
+    "viewReport": "View Detailed Report",
+    "lastScan": "Last scan: {{time}}",
+    "violations": "Violations",
+    "topViolations": "Top Violations"
+  },
+  "options": {
+    "title": "Settings",
+    "general": {
+      "title": "General",
+      "autoScan": "Auto-scan on page load",
+      "darkMode": "Dark Mode"
+    },
+    "scanning": {
+      "title": "Scanning Preferences",
+      "depth": "Scan Depth",
+      "depths": {
+        "quick": "Quick",
+        "standard": "Standard",
+        "deep": "Deep"
+      }
+    },
+    "cookies": {
+      "title": "Cookie Consent",
+      "mode": "Automation Mode",
+      "types": {
+        "necessary": {
+          "title": "Strictly-Necessary Cookies (always active)",
+          "description": "Required to enable essential functions of the website, such as registration or shopping carts. They are always enabled to allow for a smooth and problem-free browsing experience."
+        },
+        "functionality": {
+          "title": "Allow Functionality Cookies (recommended)",
+          "description": "Enable non-essential convenience or usability features of a website, such as saving style preferences between visits. However, this may also include a minor number of tracking cookies. We recommend enabling these cookies to improve the user experience."
+        },
+        "analytics": {
+          "title": "Allow Analytics Cookies",
+          "description": "Used to collect statistical information about how visitors use a website. This information is often used to measure the performance and guide the development of a website, but can include sensitive data and allow user tracking. Disable these if you are concerned over potential trackers from analytics services."
+        },
+        "advertising": {
+          "title": "Allow Advertising/Tracking Cookies",
+          "description": "Used to tailor advertisements to the viewer, help track the user and collect sensitive data of the user's browsing behavior, usually across multiple websites. Said data is then also often sold to third parties. We recommend rejecting these types of cookies to protect your privacy."
+        }
+      }
+    },
+    "standards": {
+        "title": "Compliance Standards"
+    },
+    "data": {
+        "title": "Data & Privacy",
+        "clearHistory": "Clear Scan History",
+        "export": "Export Data"
+    },
+    "privacyScanner": {
+        "title": "Privacy Policy Compliance"
+    }
+  },
+  "privacyScanner": {
+    "urlInput": {
+      "label": "Website URL(s)",
+      "placeholder": "Enter one or more website URLs (comma or newline separated)\ne.g., example.com, website.com",
+      "hint": "Enter website URLs separated by commas or newlines, or upload a file (.txt, .csv) containing URLs"
+    },
+    "scanButton": "Generate Report",
+    "uploadButton": "Upload File",
+    "scanning": {
+      "title": "Scanning Privacy Policy",
+      "message": "Analyzing the website's privacy policy for compliance violations..."
+    },
+    "initial": {
+      "title": "No Scan Results Yet",
+      "message": "Enter a website URL above to begin scanning for privacy policy compliance"
+    },
+    "results": {
+      "scannedUrl": "Scanned URL",
+      "scannedAt": "Scanned at {{time}}",
+      "noDetails": "No additional details available",
+      "gdpr": {
+        "title": "GDPR Compliance",
+        "subtitle": "General Data Protection Regulation (EU)"
+      },
+      "pdpa": {
+        "title": "PDPA Compliance",
+        "subtitle": "Pakistan Personal Data Protection Act"
+      }
+    },
+    "status": {
+      "compliant": "Compliant",
+      "nonCompliant": "Non-Compliant",
+      "partial": "Partially Compliant",
+      "unknown": "Unknown"
+    },
+    "error": {
+      "title": "Scan Failed",
+      "message": "Unable to scan the website. Please check the URL and try again."
+    }
+  },
+  "sidepanel": {
+    "title": "Compliance Report",
+    "score": "Compliance Score",
+    "tabs": {
+        "overview": "Overview",
+        "policy": "Privacy Policy",
+        "cookies": "Cookies",
+        "violations": "Violations",
+        "recommendations": "Fixes"
+    },
+    "overview": {
+        "totalIssues": "Total Issues",
+        "critical": "Critical",
+        "warnings": "Warnings"
+    }
+  },
+  "severity": {
+    "high": "High",
+    "medium": "Medium",
+    "low": "Low"
+  }
+}

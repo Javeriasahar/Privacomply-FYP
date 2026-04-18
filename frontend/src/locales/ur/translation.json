@@ -1,0 +1,119 @@
+{
+  "common": {
+    "scan": "تعمیل جانچیں",
+    "enforceCookieProtection": "کوکی پروٹیکشن نافذ کریں",
+    "scanning": "اسکیننگ جاری ہے...",
+    "compliant": "مطابق",
+    "nonCompliant": "غیر مطابق",
+    "unknown": "نامعلوم",
+    "save": "ترتیبات محفوظ کریں",
+    "cancel": "منسوخ کریں",
+    "settings": "ترتیبات",
+    "language": "زبان",
+    "theme": "تھیم",
+    "loading": "لوڈ ہو رہا ہے...",
+    "error": "خرابی پیش آگئی",
+    "tryAgain": "دوبارہ کوشش کریں"
+  },
+  "popup": {
+    "header": "Privacomply",
+    "noResults": "ابھی تک کوئی اسکین نتائج نہیں ہیں۔ شروع کرنے کے لیے 'ویب سائٹ اسکین کریں' پر کلک کریں۔",
+    "viewReport": "تفصیلی رپورٹ دیکھیں",
+    "lastScan": "آخری اسکین: {{time}}",
+    "violations": "خلاف ورزیاں",
+    "topViolations": "سرفہرست خلاف ورزیاں"
+  },
+  "options": {
+    "title": "ترتیبات",
+    "general": {
+      "title": "عمومی",
+      "autoScan": "صفحہ لوڈ ہونے پر خودکار اسکین",
+      "darkMode": "ڈارک موڈ"
+    },
+    "scanning": {
+      "title": "اسکیننگ کی ترجیحات",
+      "depth": "اسکین کی گہرائی",
+      "depths": {
+        "quick": "فوری",
+        "standard": "معیاری",
+        "deep": "گہرا"
+      }
+    },
+    "cookies": {
+      "title": "کوکی رضامندی",
+      "mode": "آٹومیشن موڈ"
+    },
+    "standards": {
+        "title": "تعمیل کے معیارات"
+    },
+    "data": {
+        "title": "ڈیٹا اور پرائیویسی",
+        "clearHistory": "اسکین ہسٹری صاف کریں",
+        "export": "ڈیٹا ایکسپورٹ کریں"
+    },
+    "privacyScanner": {
+        "title": "پرائیویسی پالیسی تعمیل"
+    }
+  },
+  "privacyScanner": {
+    "urlInput": {
+      "label": "ویب سائٹ کے URLs",
+      "placeholder": "ایک یا زیادہ ویب سائٹ URLs درج کریں (کوما یا نئی لائن سے الگ)\nمثلاً، example.com, website.com",
+      "hint": "ویب سائٹ کے URLs کوما یا نئی لائن سے الگ کر کے درج کریں، یا URLs پر مشتمل فائل (.txt, .csv) اپ لوڈ کریں"
+    },
+    "scanButton": "رپورٹ بنائیں",
+    "uploadButton": "فائل اپ لوڈ کریں",
+    "scanning": {
+      "title": "پرائیویسی پالیسی کا اسکین",
+      "message": "تعمیل کی خلاف ورزیوں کے لیے ویب سائٹ کی پرائیویسی پالیسی کا تجزیہ کیا جا رہا ہے..."
+    },
+    "initial": {
+      "title": "ابھی تک کوئی اسکین نتائج نہیں",
+      "message": "پرائیویسی پالیسی کی تعمیل کے لیے اسکیننگ شروع کرنے کے لیے اوپر ویب سائٹ کا URL درج کریں"
+    },
+    "results": {
+      "scannedUrl": "اسکین شدہ URL",
+      "scannedAt": "اسکین وقت {{time}}",
+      "noDetails": "کوئی اضافی تفصیلات دستیاب نہیں",
+      "gdpr": {
+        "title": "GDPR تعمیل",
+        "subtitle": "جنرل ڈیٹا پروٹیکشن ریگولیشن (EU)"
+      },
+      "pdpa": {
+        "title": "PDPA تعمیل",
+        "subtitle": "پاکستان پرسنل ڈیٹا پروٹیکشن ایکٹ"
+      }
+    },
+    "status": {
+      "compliant": "مطابق",
+      "nonCompliant": "غیر مطابق",
+      "partial": "جزوی طور پر مطابق",
+      "unknown": "نامعلوم"
+    },
+    "error": {
+      "title": "اسکین ناکام",
+      "message": "ویب سائٹ کو اسکین کرنے میں ناکام۔ براہ کرم URL چیک کریں اور دوبارہ کوشش کریں۔"
+    }
+  },
+  "sidepanel": {
+    "title": "تعمیل کی رپورٹ",
+    "score": "تعمیل اسکور",
+    "tabs": {
+        "overview": "جائزہ",
+        "policy": "پرائیویسی پالیسی",
+        "cookies": "کوکیز",
+        "violations": "خلاف ورزیاں",
+        "recommendations": "اصلاحات"
+    },
+    "overview": {
+        "totalIssues": "کل مسائل",
+        "critical": "اہم",
+        "warnings": "انتباہات"
+    }
+  },
+  "severity": {
+    "high": "زیادہ",
+    "medium": "درمیانہ",
+    "low": "کم"
+  }
+}

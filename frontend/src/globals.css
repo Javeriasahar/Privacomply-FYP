@@ -1,0 +1,73 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 11% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 11% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 11% 15%;
+    --primary: 166 76% 47%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 11% 96%;
+    --secondary-foreground: 210 11% 15%;
+    --muted: 210 11% 96%;
+    --muted-foreground: 210 11% 45%;
+    --accent: 166 76% 47%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 11% 90%;
+    --input: 210 11% 90%;
+    --ring: 166 76% 47%;
+    --radius: 0.75rem;
+    --chart-1: 166 76% 47%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+
+    /* Custom colors */
+    --teal: 166 76% 47%;
+    --dark: 200 19% 18%;
+    --dark-lighter: 200 15% 25%;
+  }
+
+  .dark {
+    --background: 200 19% 12%;
+    --foreground: 210 40% 98%;
+    --card: 200 19% 15%;
+    --card-foreground: 210 40% 98%;
+    --popover: 200 19% 15%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 166 76% 47%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 200 15% 20%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 200 15% 20%;
+    --muted-foreground: 210 20% 65%;
+    --accent: 166 76% 47%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 45%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 200 15% 25%;
+    --input: 200 15% 25%;
+    --ring: 166 76% 47%;
+    --chart-1: 166 76% 47%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

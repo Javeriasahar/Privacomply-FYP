@@ -1,0 +1,56 @@
+{
+  "manifest_version": 3,
+  "name": "PrivaComply",
+  "version": "1.0.0",
+  "description": "Get compliant with GDPR and PDPA regulations with PrivaComply, the ultimate cookie consent manager for your website.",
+  "background": {
+    "service_worker": "src/background/index.ts",
+    "type": "module"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "src/pages/popup/popup.html",
+    "default_icon": "icons/icon48.png"
+  },
+  "options_page": "src/pages/options/options.html",
+  "side_panel": {
+    "default_path": "src/pages/sidepanel/sidepanel.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content/index.ts"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "background/*.json",
+        "background/model/*.json",
+        "background/resources/*.txt",
+        "trackers.json"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "cookies",
+    "sidePanel",
+    "scripting",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "default_locale": "en"
+}

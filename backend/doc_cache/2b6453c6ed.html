@@ -1,0 +1,1187 @@
+<!doctype html>
+<!--[if lte IE 8 ]><html lang="en" class="ie8"><![endif]-->
+<!--[if lte IE 9 ]><html lang="en" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>A guide to data security | ICO</title>
+    
+
+<meta name="DC.Subject" content="A guide to data security" />
+<meta name="DC.Date" content="Tuesday, September 09, 2025" />
+<meta name="DC.Creator" content="" />
+<meta name="DC.Publisher" content="ICO" />
+<meta name="DC.Title" content="A guide to data security" />
+<meta name="DC.PageID" content="5606" />
+
+<meta property="og:title" content="A guide to data security" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/security/a-guide-to-data-security/" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="" />
+
+<meta name="twitter:title" content="A guide to data security" />
+<meta name="twitter:description" content="" />
+
+<meta name="description" content="" />
+
+
+    
+
+<meta name="robots" content="index" />
+
+    <link rel="shortcut icon" type="image/x-icon" href="/media2/lhphq55z/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/css/site.css?v=BwOVC9vVV6268LypYZd3tkCsM63Es5d1IY4UaqUcee8" />
+    
+</head>
+<body id="top" class="bg-white min-h-screen ">
+    
+
+    <a class="flex items-center justify-center px-3 py-2 bg-secondary text-white text-xl sr-only focus:relative focus:w-full focus:h-fit" href="#main-content">
+        <span class="font-serif text-serif-base pr-2">Skip to main content</span>
+        <span class="icon icon-arrow-down"></span>
+    </a>
+    <header class="w-full fixed md:static z-10 md:z-auto print:hidden">
+        <div class="bg-primary">
+            <div class="lg:container px-4 py-3.5 md:flex">
+                <div class="md:pr-8">
+                    
+    <a href="/">
+            <img src="/media2/qkcg1rdf/logo-small.svg?width=80&amp;height=32&amp;v=1db03b868bf60c0" width="80" height="32" alt="" class="inline-block md:hidden" />
+            <img src="/media2/myukqaa2/ico-header-logo.svg?width=160&amp;height=96&amp;v=1db03b866f17e90" width="160" height="96" alt="" class="hidden md:inline-block" />
+        <span class="sr-only">Home</span>
+    </a>
+
+                </div>
+                <div class="grow items-stretch hidden md:flex">
+                    
+    <div class="font-serif text-center md:text-left text-white text-serif-base md:flex items-end md:pl-8 border-secondary border-dotted md:border-l-2">
+        <span>The ICO exists to empower you through information.</span>
+    </div>
+
+                </div>
+                <div class="flex flex-col items-end md:pl-8">
+                    
+
+
+
+    <script type="application/json" id="language-settings">
+        {"cookieDomain":"ico.org.uk","options":[{"text":"English","href":"https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/security/a-guide-to-data-security/","icon":"icon-lang-en","value":"English"},{"text":"Cymraeg","href":"https://cy.ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/security/a-guide-to-data-security/","icon":"icon-lang-cy","value":"Welsh"}]}
+    </script>
+    <div id="language-toggle"></div>
+
+                    <div class="grow flex items-end">
+                        
+
+
+<button type="button" id="search-toggle" class="absolute rounded p-2 top-3 right-12 md:hidden hover:bg-secondary" aria-controls="search">
+    <span id="search-icon" class="block icon icon-search text-white text-xl"></span>
+    <span class="sr-only">Search</span>
+</button>
+
+<div id="search" class="motion-safe:transition-all motion-safe:duration-200 hidden md:block w-full sm:w-fit max-h-0 md:max-h-fit overflow-hidden md:overflow-auto">
+    <form action="https://icosearch.ico.org.uk/s/search.html" method="GET" id="search-form" class="pt-3.5 md:pt-0">
+
+                <input type="hidden" name="collection" value="ico~sp-search" />
+                <input type="hidden" name="profile" value="_default" />
+
+        <div class="flex">
+            <label for="search-query" aria-hidden="false" class="sr-only">Search</label>
+            <input type="search"
+                   name="query"
+                   id="search-query"
+                   class="grow min-w-0 px-2 py-1 border-t border-b border-l border-r-0 border-white/50 focus:border-white focus:ring-0 rounded-l bg-secondary motion-safe:transition-colors hocus:bg-white text-white hocus:text-black sm:w-60 md:w-48" />
+            <button type="submit" class="text-transparent bg-secondary rounded-r p-2 border-t border-b border-r border-white/50">
+                <span class="block text-white text-xl icon icon-search"></span>
+                <span class="sr-only">Search</span>
+            </button>
+        </div>
+    </form>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-secondary">
+            <div class="lg:container md:px-4">
+                
+
+    <button type="button" id="navbar-toggle" class="absolute rounded p-2 top-3 right-3 md:hidden hover:bg-secondary" aria-controls="navbar">
+        <span class="block icon icon-menu text-white text-xl"></span>
+        <span class="sr-only">Menu</span>
+    </button>
+    <nav id="navbar" class="bg-secondary motion-safe:transition-all motion-safe:duration-200 hidden md:block max-h-0 md:max-h-fit overflow-hidden md:overflow-auto">
+        <ul class="border-primary border-dotted border-t-2 md:border-t-0 md:flex md:flex-wrap">
+                    <li class="md:flex">
+                        <a href="/"
+                           class="relative flex justify-between items-center text-white text-serif-lg md:text-base whitespace-nowrap md:whitespace-normal pl-9 md:pl-3 pr-4 md:pr-3 py-2 md:py-1 font-serif md:font-sans before:absolute before:w-2.5 before:top-2 before:bottom-2 before:left-4 md:before:hidden md:border-y-5 md:border-transparent before:bg-theme-grey md:hover:border-t-theme-grey">
+                            <span>Home</span>
+                            <span class="icon icon-arrow-right text-xl md:hidden"></span>
+                        </a>
+                    </li>
+                    <li class="md:flex">
+                        <a href="/for-the-public/"
+                           class="relative flex justify-between items-center text-white text-serif-lg md:text-base whitespace-nowrap md:whitespace-normal pl-9 md:pl-3 pr-4 md:pr-3 py-2 md:py-1 font-serif md:font-sans before:absolute before:w-2.5 before:top-2 before:bottom-2 before:left-4 md:before:hidden md:border-y-5 md:border-transparent before:bg-theme-green md:hover:border-t-theme-green">
+                            <span>For the public</span>
+                            <span class="icon icon-arrow-right text-xl md:hidden"></span>
+                        </a>
+                    </li>
+                    <li class="md:flex">
+                        <a href="/for-organisations/"
+                           class="relative flex justify-between items-center text-white text-serif-lg md:text-base whitespace-nowrap md:whitespace-normal pl-9 md:pl-3 pr-4 md:pr-3 py-2 md:py-1 font-serif md:font-sans before:absolute before:w-2.5 before:top-2 before:bottom-2 before:left-4 md:before:hidden md:border-y-5 md:border-transparent before:bg-theme-yellow md:hover:border-t-theme-yellow bg-primary md:border-t-theme-yellow">
+                            <span>For organisations</span>
+                            <span class="icon icon-arrow-right text-xl md:hidden"></span>
+                        </a>
+                    </li>
+                    <li class="md:flex">
+                        <a href="/make-a-complaint/"
+                           class="relative flex justify-between items-center text-white text-serif-lg md:text-base whitespace-nowrap md:whitespace-normal pl-9 md:pl-3 pr-4 md:pr-3 py-2 md:py-1 font-serif md:font-sans before:absolute before:w-2.5 before:top-2 before:bottom-2 before:left-4 md:before:hidden md:border-y-5 md:border-transparent before:bg-theme-orange md:hover:border-t-theme-orange">
+                            <span>Make a complaint</span>
+                            <span class="icon icon-arrow-right text-xl md:hidden"></span>
+                        </a>
+                    </li>
+                    <li class="md:flex">
+                        <a href="/action-weve-taken/"
+                           class="relative flex justify-between items-center text-white text-serif-lg md:text-base whitespace-nowrap md:whitespace-normal pl-9 md:pl-3 pr-4 md:pr-3 py-2 md:py-1 font-serif md:font-sans before:absolute before:w-2.5 before:top-2 before:bottom-2 before:left-4 md:before:hidden md:border-y-5 md:border-transparent before:bg-theme-red md:hover:border-t-theme-red">
+                            <span>Action we&#x27;ve taken</span>
+                            <span class="icon icon-arrow-right text-xl md:hidden"></span>
+                        </a>
+                    </li>
+                    <li class="md:flex">
+                        <a href="/about-the-ico/"
+                           class="relative flex justify-between items-center text-white text-serif-lg md:text-base whitespace-nowrap md:whitespace-normal pl-9 md:pl-3 pr-4 md:pr-3 py-2 md:py-1 font-serif md:font-sans before:absolute before:w-2.5 before:top-2 before:bottom-2 before:left-4 md:before:hidden md:border-y-5 md:border-transparent before:bg-theme-blue md:hover:border-t-theme-blue">
+                            <span>About the ICO</span>
+                            <span class="icon icon-arrow-right text-xl md:hidden"></span>
+                        </a>
+                    </li>
+        </ul>
+    </nav>
+
+            </div>
+        </div>
+    </header>
+    <main id="main-content" class="pt-20 md:pt-0 md:mt-7 mb-3 md:mb-4">
+            <div class="lg:container px-4 mb-4 print:hidden">
+                
+    <nav aria-label="breadcrumb">
+        <ul class="flex flex-wrap text-sm gap-1">
+                <li>
+                        <span class="after:content-['/'] after:mx-1">
+                            <a href="/for-organisations/" class="my-[-0.5em] py-[0.5em] text-link hover:underline">For organisations</a>
+                        </span>
+                </li>
+                <li>
+                        <span class="after:content-['/'] after:mx-1">
+                            <a href="/for-organisations/uk-gdpr-guidance-and-resources/" class="my-[-0.5em] py-[0.5em] text-link hover:underline">UK GDPR guidance and resources</a>
+                        </span>
+                </li>
+                <li>
+                        <span class="after:content-['/'] after:mx-1">
+                            <a href="/for-organisations/uk-gdpr-guidance-and-resources/security/" class="my-[-0.5em] py-[0.5em] text-link hover:underline">Security, including cyber security</a>
+                        </span>
+                </li>
+                <li>
+                        <span class="my-[-0.5em] py-[0.5em]">A guide to data security</span>
+                </li>
+        </ul>
+    </nav>
+
+            </div>
+        <div class="lg:container px-4">
+                <div class="border-dotted border-b-2 border-neutral-200 pb-2 sm:pb-3.5 md:pb-6 mb-2 sm:mb-3.5 md:mb-5">
+                    <div class="md:flex md:items-center md:justify-between md:gap-10">
+                        <h1 class="py-0.5 font-serif leading-none sm:border-l-10 sm:pl-3 text-serif-2xl sm:text-serif-3xl border-theme-yellow">A guide to data security</h1>
+                    </div>
+                </div>
+            
+
+<ul class="mb-2 sm:mb-3.5 md:mb-5">
+        <li class="mt-2 sm:mt-3.5 md:mt-5">
+            
+<div class="umb-block-grid"
+     data-grid-columns="12;"
+     style="--umb-block-grid--grid-columns: 12;">
+    
+
+<div class="umb-block-grid__layout-container">
+        <div class="umb-block-grid__layout-item"
+             data-content-element-type-alias="richTextBlock"
+             data-content-element-type-key="d7ec1d8a-2a00-439e-95b4-9f3537f5ece4"
+             data-element-udi="umb://element/766e3ac5b52c4d35a555681fb1c71d93"
+             data-col-span="12"
+             data-row-span="1"
+             style=" --umb-block-grid--item-column-span: 12; --umb-block-grid--item-row-span: 1; ">
+
+<div class="rich-text">
+    <div class="prose prose-sm md:prose-base prose-h2:font-serif sm:prose-h2:border-l-10 sm:prose-h2:pl-3 prose-h3:font-serif sm:prose-lead:border-l-10 sm:prose-lead:pl-3 prose-hr:my-4 prose-h2:border-theme-yellow-light prose-lead:border-theme-yellow-light prose-theme-yellow">
+        <div class="rt-block rt-amber">
+<p>Due to the <a href="/about-the-ico/what-we-do/legislation-we-cover/data-use-and-access-act-2025/" title="Data (Use and Access) Act 2025">Data (Use and Access) Act</a> coming into law on 19 June 2025, this guidance is under review and may be subject to change. The <a href="/about-the-ico/what-we-do/our-plans-for-new-and-updated-guidance/" title="Our plans for new and updated guidance">Plans for new and updated guidance page</a> will tell you about which guidance will be updated and when this will happen.&nbsp;</p>
+</div>
+    </div>
+</div>
+        </div>
+</div>
+
+</div>
+
+        </li>
+</ul>
+
+            
+<div class="grid grid-cols-4">
+
+
+<div class="col-span-4 md:hidden border-b-2 border-dotted border-neutral-200 flex justify-between pb-2 mb-4 cursor-pointer print:hidden" id="multipage-nav-toggle">
+    <p class="text-sm text-primary justify-start">Contents</p>
+    <div class="justify-end">
+        <span class="icon icon-search text-primary" id="multipage-search-button"></span>
+        <span class="icon icon-pointer-down text-primary"></span>
+    </div>
+</div>
+
+<aside class="col-span-4 md:col-span-1 hidden md:block motion-safe:transition-all motion-safe:duration-200 overflow-hidden md:overflow-auto max-h-0 md:max-h-fit mb-6 md:mb-0" id="multipage-nav">
+    <form id="multipage-search" class="mb-3" method="get">
+        <label for="multipage-search-input" class="font-serif">Search this document</label>
+        <div class="flex mt-2">
+            <input type="search"
+                   name="search"
+                   value=""
+                   class="w-full py-2 px-2 text-sm bg-slate-100 border-r-0"
+                   id="multipage-search-input"/>
+            <button type="submit"
+                    title="Search"
+                    aria-hidden="false"
+                    aria-label="Search"
+                    class="icon icon-search px-2 bg-slate-100 border border-solid border-l-0 border-slate-700">
+            </button>
+        </div>
+    </form>
+    <nav>
+        
+<ul>
+    <li>
+        <div class="mb-2 pb-2 border-b-2 border-dotted border-neutral-200">
+            <a href="/for-organisations/uk-gdpr-guidance-and-resources/security/a-guide-to-data-security/"
+               class="pt-2 pr-2 pb-2 flex justify-between text-sm border-l-4 border-solid bg-neutral-100 text-neutral-600 border-theme-yellow pl-[10px]"
+               data-id="5606">
+                <span>A guide to data security</span>
+            </a>
+        </div>
+
+<ul>
+    <li>
+        <div>
+            <a href="/for-organisations/uk-gdpr-guidance-and-resources/security/a-guide-to-data-security/encryption/"
+               class="pt-2 pr-2 pb-2 flex justify-between text-sm border-l-4 border-solid text-link border-transparent hover:border-neutral-200 hover:bg-neutral-100 pl-[10px]"
+               data-id="5662">
+                <span>Encryption</span>
+            </a>
+        </div>
+    </li>
+</ul>
+
+<ul>
+    <li>
+        <div>
+            <a href="/for-organisations/uk-gdpr-guidance-and-resources/security/a-guide-to-data-security/ransomware-and-data-protection-compliance/"
+               class="pt-2 pr-2 pb-2 flex justify-between text-sm border-l-4 border-solid text-link border-transparent hover:border-neutral-200 hover:bg-neutral-100 pl-[10px]"
+               data-id="5666">
+                <span>Ransomware and data protection compliance</span>
+            </a>
+        </div>
+    </li>
+</ul>
+
+<ul>
+    <li>
+        <div>
+            <a href="/for-organisations/uk-gdpr-guidance-and-resources/security/a-guide-to-data-security/passwords-in-online-services/"
+               class="pt-2 pr-2 pb-2 flex justify-between text-sm border-l-4 border-solid text-link border-transparent hover:border-neutral-200 hover:bg-neutral-100 pl-[10px]"
+               data-id="5672">
+                <span>Passwords in online services</span>
+            </a>
+        </div>
+    </li>
+</ul>
+
+<ul>
+    <li>
+        <div>
+            <a href="/for-organisations/uk-gdpr-guidance-and-resources/security/a-guide-to-data-security/security-outcomes/"
+               class="pt-2 pr-2 pb-2 flex justify-between text-sm border-l-4 border-solid text-link border-transparent hover:border-neutral-200 hover:bg-neutral-100 pl-[10px]"
+               data-id="5680">
+                <span>Security outcomes</span>
+            </a>
+        </div>
+    </li>
+</ul>
+    </li>
+</ul>
+
+    </nav>
+</aside>
+    <div class="col-span-4 md:col-span-3 md:pl-10">
+            <div class="mb-10">
+                
+<div class="umb-block-grid"
+     data-grid-columns="12;"
+     style="--umb-block-grid--grid-columns: 12;">
+    
+
+<div class="umb-block-grid__layout-container">
+        <div class="umb-block-grid__layout-item"
+             data-content-element-type-alias="detailsBlock"
+             data-content-element-type-key="86269f89-de24-4579-bb82-a384f2ebac89"
+             data-element-udi="umb://element/915f3dd7a6cc46319a8c27449fa20172"
+             data-col-span="12"
+             data-row-span="1"
+             style=" --umb-block-grid--item-column-span: 12; --umb-block-grid--item-row-span: 1; ">
+
+<span class="hidden" id="9496f962-271e-437c-b983-fd74149694e0">Click to toggle details</span>
+
+<div class="prose prose-sm md:prose-base prose-h2:font-serif sm:prose-h2:border-l-10 sm:prose-h2:pl-3 prose-h3:font-serif sm:prose-lead:border-l-10 sm:prose-lead:pl-3 prose-hr:my-4 prose-h2:border-theme-yellow-light prose-lead:border-theme-yellow-light prose-theme-yellow">
+    <details>
+        <summary aria-describedby="9496f962-271e-437c-b983-fd74149694e0">Latest updates</summary>
+        <div>
+            <p><strong>19 May 2023</strong> - we have broken the Guide to the UK GDPR down into smaller guides. All the content stays the same.</p>
+        </div>
+    </details>
+</div>
+        </div>
+        <div class="umb-block-grid__layout-item"
+             data-content-element-type-alias="richTextBlock"
+             data-content-element-type-key="d7ec1d8a-2a00-439e-95b4-9f3537f5ece4"
+             data-element-udi="umb://element/9796d3ddf9d540d8a76e04efa533bc57"
+             data-col-span="12"
+             data-row-span="1"
+             style=" --umb-block-grid--item-column-span: 12; --umb-block-grid--item-row-span: 1; ">
+
+<div class="rich-text">
+    <div class="prose prose-sm md:prose-base prose-h2:font-serif sm:prose-h2:border-l-10 sm:prose-h2:pl-3 prose-h3:font-serif sm:prose-lead:border-l-10 sm:prose-lead:pl-3 prose-hr:my-4 prose-h2:border-theme-yellow-light prose-lead:border-theme-yellow-light prose-theme-yellow">
+        <h2>At a glance</h2>
+<ul>
+<li>A key principle of the UK&nbsp;GDPR is that you process personal data securely by means of ‘appropriate technical and organisational measures’ – this is the ‘security principle’.</li>
+<li>Doing this requires you to consider things like risk analysis, organisational policies, and physical and technical measures.</li>
+<li>You also have to take into account additional requirements about the security of your processing – and these also apply to data processors.</li>
+<li>You can consider the state of the art and costs of implementation when deciding what measures to take – but they must be appropriate both to your circumstances and the risk your processing poses.</li>
+<li>Where appropriate, you should look to use measures such as pseudonymisation and encryption.</li>
+<li>Your measures must ensure the ‘confidentiality, integrity and availability’ of your systems and services and the personal data you process within them.</li>
+<li>The measures must also enable you to restore access and availability to personal data in a timely manner in the event of a physical or technical incident.</li>
+<li>You also need to ensure that you have appropriate processes in place to test the effectiveness of your measures, and undertake any required improvements.</li>
+<li>We have worked closely with the National Cyber Security Centre (NCSC) to develop an approach that you can use when assessing the measures that will be appropriate for you.</li>
+</ul>
+<h2>Checklists</h2>
+<div class="rt-block rt-letter">
+<p>☐ We undertake an analysis of the risks presented by our processing, and use this to assess the appropriate level of security we need to put in place.</p>
+<p>☐ When deciding what measures to implement, we take account of the state of the art and costs of implementation.</p>
+<p>☐ We have an information security policy (or equivalent) and take steps to make sure the policy is implemented.</p>
+<p>☐ Where necessary, we have additional policies and ensure that controls are in place to enforce them.</p>
+<p>☐ We make sure that we regularly review our information security policies and measures and, where necessary, improve them.</p>
+<p>☐ We have assessed what we need to do by considering the <a href="/for-organisations/uk-gdpr-guidance-and-resources/security/a-guide-to-data-security/security-outcomes/" title="Security outcomes">security outcomes</a> we want to achieve.</p>
+<p>☐ We have put in place basic technical controls such as those specified by established frameworks like Cyber Essentials.</p>
+<p>☐ We understand that we may also need to put other technical measures in place depending on our circumstances and the type of personal data we process.</p>
+<p>☐ We use encryption and/or pseudonymisation where it is appropriate to do so.</p>
+<p>☐ We understand the requirements of confidentiality, integrity and availability for the personal data we process.</p>
+<p>☐ We make sure that we can restore access to personal data in the event of any incidents, such as by establishing an appropriate backup process.</p>
+<p>☐ We conduct regular testing and reviews of our measures to ensure they remain effective, and act on the results of those tests where they highlight areas for improvement.</p>
+<p>☐ Where appropriate, we implement measures that adhere to an approved code of conduct or certification mechanism.</p>
+<p>☐ We ensure that any data processor we use also implements appropriate technical and organisational measures.</p>
+</div>
+<h2>In brief</h2>
+<ul>
+<li><a href="#2">What does the UK&nbsp;GDPR say about security?</a></li>
+<li><a href="#3">Why should we worry about information security?</a></li>
+<li><a href="#4">What do we need to protect with our security measures?</a></li>
+<li><a href="#5">What level of security is required?</a></li>
+<li><a href="#6">What organisational measures do we need to consider?</a></li>
+<li><a href="#7">What technical measures do we need to consider?</a></li>
+<li><a href="#8">What if we operate in a sector that has its own security requirements?</a></li>
+<li><a href="#9">What do we do when a data processor is involved?</a></li>
+<li><a href="#xx">Should we use pseudonymisation and encryption?</a></li>
+<li><a href="#10">What are ‘confidentiality, integrity, availability’ and ‘resilience’?</a></li>
+<li><a href="#11">What are the requirements for restoring availability and access to personal data?</a></li>
+<li><a href="#12">Are we required to ensure our security measures are effective?</a></li>
+<li><a href="#13">What about codes of conduct and certification?</a></li>
+<li><a href="#14">What about our staff?</a></li>
+</ul>
+<h3><a id="2"></a>What does the UK&nbsp;GDPR say about security?</h3>
+<p>Article 5(1)(f) of the UK&nbsp;GDPR concerns the ‘integrity and confidentiality’ of personal data. It says that personal data shall be:</p>
+<blockquote>
+<p>'Processed in a manner that ensures appropriate security of the personal data, including protection against unauthorised or unlawful processing and against accidental loss, destruction or damage, using appropriate technical or organisational measures'</p>
+</blockquote>
+<p>You can refer to this as the UK&nbsp;GDPR’s ‘security principle’. It concerns the broad concept of <strong>information security</strong>.</p>
+<p>This means that you must have appropriate security in place to prevent the personal data you hold being accidentally or deliberately compromised. You should remember that while information security is sometimes considered as cybersecurity (the protection of your networks and information systems from attack), it also covers other things like physical and organisational security measures.</p>
+<p>You need to consider the security principle alongside Article 32 of the UK&nbsp;GDPR, which provides more specifics on the security of your processing. Article 32(1) states:</p>
+<blockquote>
+<p>‘Taking into account the state of the art, the costs of implementation and the nature, scope, context and purposes of processing as well as the risk of varying likelihood and severity for the rights and freedoms of natural persons, the controller and the processor shall implement appropriate technical and organisational measures to ensure a level of security appropriate to the risk’</p>
+</blockquote>
+    </div>
+</div>
+        </div>
+        <div class="umb-block-grid__layout-item"
+             data-content-element-type-alias="furtherReadingBlock"
+             data-content-element-type-key="349dc532-9e3f-4f24-9fa4-2e5b86aa0eda"
+             data-element-udi="umb://element/4a8099321f4d4e0289ea838e5f7c5cd0"
+             data-col-span="12"
+             data-row-span="1"
+             style=" --umb-block-grid--item-column-span: 12; --umb-block-grid--item-row-span: 1; ">
+
+
+
+<further-Reading x-href="https://www.legislation.gov.uk/eur/2016/679/contents"
+                 x-target="_blank"
+                 x-title="Relevant provisions in the UK GDPR - See Articles 5(1)(f) and 32, and Recitals 39 and 83"
+                 x-location="External link"></further-Reading>
+        </div>
+        <div class="umb-block-grid__layout-item"
+             data-content-element-type-alias="richTextBlock"
+             data-content-element-type-key="d7ec1d8a-2a00-439e-95b4-9f3537f5ece4"
+             data-element-udi="umb://element/4791035546be495b98b93fc67ce48578"
+             data-col-span="12"
+             data-row-span="1"
+             style=" --umb-block-grid--item-column-span: 12; --umb-block-grid--item-row-span: 1; ">
+
+<div class="rich-text">
+    <div class="prose prose-sm md:prose-base prose-h2:font-serif sm:prose-h2:border-l-10 sm:prose-h2:pl-3 prose-h3:font-serif sm:prose-lead:border-l-10 sm:prose-lead:pl-3 prose-hr:my-4 prose-h2:border-theme-yellow-light prose-lead:border-theme-yellow-light prose-theme-yellow">
+        <h3>&nbsp;<a id="3"></a>Why should we worry about information security?</h3>
+<p>Poor information security leaves your systems and services at risk and may cause real harm and distress to individuals – lives may even be endangered in some extreme cases.</p>
+<p>Some examples of the harm caused by the loss or abuse of personal data include:</p>
+<ul>
+<li>identity fraud;</li>
+<li>fake credit card transactions;</li>
+<li>targeting of individuals by fraudsters, potentially made more convincing by compromised personal data;</li>
+<li>witnesses put at risk of physical harm or intimidation;</li>
+<li>offenders at risk from vigilantes;</li>
+<li>exposure of the addresses of service personnel, police and prison officers, and those at risk of domestic violence;</li>
+<li>fake applications for tax credits; and</li>
+<li>mortgage fraud.</li>
+</ul>
+<p>Although these consequences do not always happen, you should recognise that individuals are still entitled to be protected from less serious kinds of harm, for example embarrassment or inconvenience.</p>
+<p>Information security is important, not only because it is itself a legal requirement, but also because it can support good data governance and help you demonstrate your compliance with other aspects of the UK&nbsp;GDPR.</p>
+<p>The ICO is also required to consider the technical and organisational measures you had in place when considering an administrative fine.</p>
+<h3><a id="4"></a>What do our security measures need to protect?</h3>
+<p>The security principle goes beyond the way you store or transmit information. Every aspect of your processing of personal data is covered, not just cybersecurity. This means the security measures you put in place should seek to ensure that:</p>
+<ul>
+<li>the data can be accessed, altered, disclosed or deleted only by those you have authorised to do so (and that those people only act within the scope of the authority you give them);</li>
+<li>the data you hold is accurate and complete in relation to why you are processing it; and</li>
+<li>the data remains accessible and usable, ie, if personal data is accidentally lost, altered or destroyed, you should be able to recover it and therefore prevent any damage or distress to the individuals concerned.</li>
+</ul>
+<p>These are known as ‘confidentiality, integrity and availability’ and under the UK&nbsp;GDPR, they form part of your obligations.</p>
+<h3><a id="5"></a>What level of security is required?</h3>
+<p>The UK&nbsp;GDPR does not define the security measures that you should have in place. It requires you to have a level of security that is ‘appropriate’ to the risks presented by your processing. You need to consider this in relation to the state of the art and costs of implementation, as well as the nature, scope, context and purpose of your processing.</p>
+<p>This reflects both the UK&nbsp;GDPR’s risk-based approach, and that there is no ‘one size fits all’ solution to information security. It means that what’s ‘appropriate’ for you will depend on your own circumstances, the processing you’re doing, and the risks it presents to your organisation.</p>
+<p>So, before deciding what measures are appropriate, you need to assess your information risk. You should review the personal data you hold and the way you use it in order to assess how valuable, sensitive or confidential it is – as well as the damage or distress that may be caused if the data was compromised. You should also take account of factors such as:</p>
+<ul>
+<li>the nature and extent of your organisation’s premises and computer systems;</li>
+<li>the number of staff you have and the extent of their access to personal data; and</li>
+<li>any personal data held or used by a data processor acting on your behalf.</li>
+</ul>
+    </div>
+</div>
+        </div>
+        <div class="umb-block-grid__layout-item"
+             data-content-element-type-alias="furtherReadingBlock"
+             data-content-element-type-key="349dc532-9e3f-4f24-9fa4-2e5b86aa0eda"
+             data-element-udi="umb://element/36a73f9fb1794c78bafe585210a32e68"
+             data-col-span="12"
+             data-row-span="1"
+             style=" --umb-block-grid--item-column-span: 12; --umb-block-grid--item-row-span: 1; ">
+
+
+
+<further-Reading x-href="https://www.legislation.gov.uk/eur/2016/679/contents"
+                 x-target="_blank"
+                 x-title="Relevant provisions in the UK GDPR - See Article 32(2) and Recital 83"
+                 x-location="External link"></further-Reading>
+        </div>
+        <div class="umb-block-grid__layout-item"
+             data-content-element-type-alias="richTextBlock"
+             data-content-element-type-key="d7ec1d8a-2a00-439e-95b4-9f3537f5ece4"
+             data-element-udi="umb://element/7858dcc598694fcd8c6b272e7437041d"
+             data-col-span="12"
+             data-row-span="1"
+             style=" --umb-block-grid--item-column-span: 12; --umb-block-grid--item-row-span: 1; ">
+
+<div class="rich-text">
+    <div class="prose prose-sm md:prose-base prose-h2:font-serif sm:prose-h2:border-l-10 sm:prose-h2:pl-3 prose-h3:font-serif sm:prose-lead:border-l-10 sm:prose-lead:pl-3 prose-hr:my-4 prose-h2:border-theme-yellow-light prose-lead:border-theme-yellow-light prose-theme-yellow">
+        <p>We cannot provide a complete guide to all aspects of security in all circumstances for all organisations, but this guidance is intended to identify the main points for you to consider.</p>
+<h3><a id="6"></a>What organisational measures do we need to consider?</h3>
+<p>Carrying out an information risk assessment is one example of an organisational measure, but you will need to take other measures as well. You should aim to build a culture of security awareness within your organisation. You should identify a person with day-to-day responsibility for information security within your organisation and make sure this person has the appropriate resources and authority to do their job effectively.</p>
+<div class="rt-example">
+<p><strong>Example</strong></p>
+<p>The Chief Executive of a medium-sized organisation asks the Director of Resources to ensure that appropriate security measures are in place, and that regular reports are made to the board.</p>
+<p>The Resources Department takes responsibility for designing and implementing the organisation’s security policy, writing procedures for staff to follow, organising staff training, checking whether security measures are actually being adhered to and investigating security incidents.</p>
+</div>
+<p>Clear accountability for security will ensure that you do not overlook these issues, and that your overall security posture does not become flawed or out of date.</p>
+<p>Although an information security policy is an example of an appropriate organisational measure, you may not need a ‘formal’ policy document or an associated set of policies in specific areas. It depends on your size and the amount and nature of the personal data you process, and the way you use that data. However, having a policy does enable you to demonstrate how you are taking steps to comply with the security principle.</p>
+<p>Whether or not you have such a policy, you still need to consider security and other related matters such as:</p>
+<ul>
+<li>co-ordination between key people in your organisation (eg the security manager will need to know about commissioning and disposing of any IT equipment);</li>
+<li>access to premises or equipment given to anyone outside your organisation (eg for computer maintenance) and the additional security considerations this will generate;</li>
+<li>business continuity arrangements that identify how you will protect and recover any personal data you hold; and</li>
+<li>periodic checks to ensure that your security measures remain appropriate and up to date.</li>
+</ul>
+<h3><a id="7"></a>What technical measures do we need to consider?</h3>
+<p>Technical measures are sometimes thought of as the protection of personal data held in computers and networks. Whilst these are of obvious importance, many security incidents can be due to the theft or loss of equipment, the abandonment of old computers or hard-copy records being lost, stolen or incorrectly disposed of. Technical measures therefore include both physical and computer or IT security.</p>
+<p>When considering physical security, you should look at factors such as:</p>
+<ul>
+<li>the quality of doors and locks, and the protection of your premises by such means as alarms, security lighting or CCTV;</li>
+<li>how you control access to your premises, and how visitors are supervised;</li>
+<li>how you dispose of any paper and electronic waste; and</li>
+<li>how you keep IT equipment, particularly mobile devices, secure.</li>
+</ul>
+<p>In the IT context, technical measures may sometimes be referred to as ‘cybersecurity’. This is a complex technical area that is constantly evolving, with new threats and vulnerabilities always emerging. It may therefore be sensible to assume that your systems are vulnerable and take steps to protect them.</p>
+<p>When considering cybersecurity, you should look at factors such as:</p>
+<ul>
+<li>system security – the security of your network and information systems, including those which process personal data;</li>
+<li>data security – the security of the data you hold within your systems, eg ensuring appropriate access controls are in place and that data is held securely;</li>
+<li>online security – eg the security of your website and any other online service or application that you use; and</li>
+<li>device security – including policies on Bring-your-own-Device (BYOD) if you offer it.</li>
+</ul>
+<p>Depending on the sophistication of your systems, your usage requirements and the technical expertise of your staff, you may need to obtain specialist information security advice that goes beyond the scope of this guidance. However, it’s also the case that you may not need a great deal of time and resources to secure your systems and the personal data they process.</p>
+<p>Whatever you do, you should remember the following:</p>
+<ul>
+<li>your cybersecurity measures need to be appropriate to the size and use of your network and information systems;</li>
+<li>you should take into account the state of technological development, but you are also able to consider the costs of implementation;</li>
+<li>your security must be appropriate to your business practices. For example, if you offer staff the ability to work from home, you need to put measures in place to ensure that this does not compromise your security; and</li>
+<li>your measures must be appropriate to the nature of the personal data you hold and the harm that might result from any compromise.</li>
+</ul>
+<p>A good starting point is to make sure that you’re in line with the requirements of Cyber Essentials – a government scheme that includes a set of basic technical controls you can put in place relatively easily.</p>
+<p>You should however be aware that you may have to go beyond these requirements, depending on your processing activities. Cyber Essentials is only intended to provide a ‘base’ set of controls, and won’t address the circumstances of every organisation or the risks posed by every processing operation.</p>
+<p>A list of helpful sources of information about cybersecurity is provided below.</p>
+<div class="rt-block rt-green">
+<p><strong>Further reading – ICO/NCSC security outcomes</strong></p>
+<p>We have worked closely with the NCSC to develop a set of <a rel="noopener" href="/for-organisations/uk-gdpr-guidance-and-resources/security/a-guide-to-data-security/security-outcomes/" target="_blank" title="Security outcomes">security outcomes</a> that you can use to determine the measures appropriate for your circumstances.</p>
+<p>The <a data-id="9ad898c0-244c-4851-afa6-aff1124f9d89" href="#" title="Records management and security">Accountability Framework</a> looks at the ICO’s expectations in relation to security.</p>
+</div>
+<p>&nbsp;</p>
+<div class="rt-block rt-green">
+<p><strong>Further reading – ICO guidance</strong></p>
+<p>Under the 1998 Act, the ICO published a number of more detailed guidance pieces on different aspects of IT security. Where appropriate, we will be updating each of these to reflect the UK GDPR’s requirements in due course. However, until that time they may still provide you with assistance or things to consider.</p>
+<ul>
+<li><a href="/about-the-ico/research-reports-impact-and-evaluation/research-and-reports/learning-from-the-mistakes-of-others-a-retrospective-review/" title="Learning from the mistakes of others – A retrospective review">Protecting personal data in online services – learning from the mistakes of others</a> – detailed technical guidance on common technical errors the ICO has seen in its casework;</li>
+<li><a href="/media2/migrated/1563/ico_bring_your_own_device_byod_guidance.pdf" title="Bring your own device">Bring your own device (BYOD)</a> (pdf) – guidance for organisations who want to allow staff to use personal devices to process personal data;</li>
+<li><a rel="noopener" href="/media2/migrated/1042330/cloud-computing-guidance-for-organisations.pdf" target="_blank" title="cloud-computing-guidance-for-organisations.pdf">Cloud computing</a> (pdf) – guidance covering how security requirements apply to personal data processed in the cloud; and</li>
+<li><a data-id="cf3869f1-afd4-4d91-a7af-c77a0636ae42" href="/for-organisations/uk-gdpr-guidance-and-resources/security/encryption/" title="Encryption">Detailed guidance on encryption</a> – advice on the use of encryption to protect personal data.</li>
+</ul>
+</div>
+<p>&nbsp;</p>
+<div class="rt-block rt-green">
+<p><strong>Other resources</strong></p>
+<p><a rel="noopener" href="https://www.ncsc.gov.uk/cyberessentials/overview" target="_blank" title="Cyber Essentials scheme">Homepage of the Cyber Essentials scheme</a></p>
+</div>
+<h3><a id="8"></a>What if we operate in a sector that has its own security requirements?</h3>
+<p>Some industries have specific security requirements or require you to adhere to certain frameworks or standards. These may be set collectively, for example by industry bodies or trade associations, or could be set by other regulators. If you operate in these sectors, you need to be aware of their requirements, particularly if specific technical measures are specified.</p>
+<p>Although following these requirements will not necessarily equate to compliance with the UK&nbsp;GDPR’s security principle, the ICO will nevertheless consider these carefully in any considerations of regulatory action. It can be the case that they specify certain measures that you should have, and that those measures contribute to your overall security posture.</p>
+<div class="rt-example">
+<p><strong>Example</strong></p>
+<p>If you are processing payment card data, you are obliged to comply with the <a rel="noopener" href="https://www.pcisecuritystandards.org" target="_blank" title="Payment Card Industry Data Security Standard">Payment Card Industry Data Security Standard</a>. The PCI-DSS outlines a number of specific technical and organisational measures that the payment card industry considers applicable whenever such data is being processed.</p>
+<p>Although compliance with the PCI-DSS is not necessarily equivalent to compliance with the UK&nbsp;GDPR’s security principle, if you process card data and suffer a personal data breach, the ICO will consider the extent to which you have put in place measures that PCI-DSS requires particularly if the breach related to a lack of a particular control or process mandated by the standard.</p>
+</div>
+<h3><a id="9"></a>What do we do when a processor is involved?</h3>
+<p>If one or more organisations process personal data on your behalf, then these are data processors under the UK&nbsp;GDPR. This can have the potential to cause security problems – as a data controller you are responsible for ensuring compliance with the UK&nbsp;GDPR and this includes what the processor does with the data. However, in addition to this, the UK&nbsp;GDPR’s security requirements also apply to any processor you use.</p>
+<p>This means that:</p>
+<ul>
+<li>you must choose a data processor that provides sufficient guarantees about its security measures;</li>
+<li>your written contract must stipulate that the processor takes all measures required under Article 32 – basically, the contract has to require the processor to undertake the same security measures that you would have to take if you were doing the processing yourself; and</li>
+<li>you should ensure that your contract includes a requirement that the processor makes available all information necessary to demonstrate compliance. This may include allowing for you to audit and inspect the processor, either yourself or an authorised third party.</li>
+</ul>
+<p>At the same time, your processor can assist you in ensuring compliance with your security obligations. For example, if you lack the resource or technical expertise to implement certain measures, engaging a processor that has these resources can assist you in making sure personal data is processed securely, provided that your contractual arrangements are appropriate.</p>
+    </div>
+</div>
+        </div>
+        <div class="umb-block-grid__layout-item"
+             data-content-element-type-alias="furtherReadingBlock"
+             data-content-element-type-key="349dc532-9e3f-4f24-9fa4-2e5b86aa0eda"
+             data-element-udi="umb://element/a77b7d2fd79446bc972579db16c99502"
+             data-col-span="12"
+             data-row-span="1"
+             style=" --umb-block-grid--item-column-span: 12; --umb-block-grid--item-row-span: 1; ">
+
+
+
+<further-Reading x-href="https://www.legislation.gov.uk/eur/2016/679/contents"
+                 x-target="_blank"
+                 x-title="Relevant provisions in the UK GDPR - See Articles 28 and 32, and Recitals 81 and 83"
+                 x-location="External link"></further-Reading>
+        </div>
+        <div class="umb-block-grid__layout-item"
+             data-content-element-type-alias="richTextBlock"
+             data-content-element-type-key="d7ec1d8a-2a00-439e-95b4-9f3537f5ece4"
+             data-element-udi="umb://element/ba937e28ae8744c1a0fbc9988a4a7cb1"
+             data-col-span="12"
+             data-row-span="1"
+             style=" --umb-block-grid--item-column-span: 12; --umb-block-grid--item-row-span: 1; ">
+
+<div class="rich-text">
+    <div class="prose prose-sm md:prose-base prose-h2:font-serif sm:prose-h2:border-l-10 sm:prose-h2:pl-3 prose-h3:font-serif sm:prose-lead:border-l-10 sm:prose-lead:pl-3 prose-hr:my-4 prose-h2:border-theme-yellow-light prose-lead:border-theme-yellow-light prose-theme-yellow">
+        <div class="rt-block rt-green">
+<p><strong>Further reading</strong></p>
+<ul>
+<li><a href="/for-organisations/uk-gdpr-guidance-and-resources/controllers-and-processors/" title="Controllers and processors">Controllers and processors</a></li>
+<li><a href="/for-organisations/uk-gdpr-guidance-and-resources/accountability-and-governance/guide-to-accountability-and-governance/contracts/" title="Contracts">Contracts</a></li>
+</ul>
+</div>
+<p>&nbsp;</p>
+<h3><a id="xx"></a>Should we use pseudonymisation and encryption?</h3>
+<p>Pseudonymisation and encryption are specified in the UK&nbsp;GDPR as two examples of measures that may be appropriate for you to implement. This does not mean that you are obliged to use these measures. It depends on the nature, scope, context and purposes of your processing, and the risks posed to individuals.</p>
+<p>However, there are a wide range of solutions that allow you to implement both without great cost or difficulty. For example, for a number of years the ICO has considered encryption to be an appropriate technical measure given its widespread availability and relatively low cost of implementation. This position has not altered due to the UK&nbsp;GDPR — if you are storing personal data, or transmitting it over the internet, we recommend that you use encryption and have a suitable policy in place, taking account of the residual risks involved.</p>
+<p>When considering what to put in place, you should undertake a risk analysis and document your findings.</p>
+    </div>
+</div>
+        </div>
+        <div class="umb-block-grid__layout-item"
+             data-content-element-type-alias="furtherReadingBlock"
+             data-content-element-type-key="349dc532-9e3f-4f24-9fa4-2e5b86aa0eda"
+             data-element-udi="umb://element/fad3e96fc9484c63bb61359954813f70"
+             data-col-span="12"
+             data-row-span="1"
+             style=" --umb-block-grid--item-column-span: 12; --umb-block-grid--item-row-span: 1; ">
+
+
+
+<further-Reading x-href="https://www.legislation.gov.uk/eur/2016/679/contents"
+                 x-target="_blank"
+                 x-title="Relevant provisions in the UK GDPR - See Article 32(1)(a) and Recital 83"
+                 x-location="External link"></further-Reading>
+        </div>
+        <div class="umb-block-grid__layout-item"
+             data-content-element-type-alias="richTextBlock"
+             data-content-element-type-key="d7ec1d8a-2a00-439e-95b4-9f3537f5ece4"
+             data-element-udi="umb://element/76cf023c7a4a4d418ebad6976206d9ab"
+             data-col-span="12"
+             data-row-span="1"
+             style=" --umb-block-grid--item-column-span: 12; --umb-block-grid--item-row-span: 1; ">
+
+<div class="rich-text">
+    <div class="prose prose-sm md:prose-base prose-h2:font-serif sm:prose-h2:border-l-10 sm:prose-h2:pl-3 prose-h3:font-serif sm:prose-lead:border-l-10 sm:prose-lead:pl-3 prose-hr:my-4 prose-h2:border-theme-yellow-light prose-lead:border-theme-yellow-light prose-theme-yellow">
+        <div class="rt-block rt-green">
+<p><strong>In more detail – ICO guidance</strong></p>
+<p><a data-id="cf3869f1-afd4-4d91-a7af-c77a0636ae42" href="/for-organisations/uk-gdpr-guidance-and-resources/security/encryption/" title="Encryption">Detailed guidance on encryption</a>&nbsp;</p>
+</div>
+<h3><a id="10"></a>What are ‘confidentiality, integrity, availability’ and ‘resilience’?</h3>
+<p>Collectively known as the ‘CIA triad’, confidentiality, integrity and availability are the three key elements of information security. If any of the three elements is compromised, then there can be serious consequences, both for you as a data controller, and for the individuals whose data you process.</p>
+<p>The information security measures you implement should seek to guarantee all three both for the systems themselves and any data they process.</p>
+<p>The CIA triad has existed for a number of years and its concepts are well-known to security professionals.</p>
+<p>You are also required to have the ability to ensure the ‘resilience’ of your processing systems and services. Resilience refers to:</p>
+<ul>
+<li>whether your systems can continue operating under adverse conditions, such as those that may result from a physical or technical incident; and</li>
+<li>your ability to restore them to an effective state.</li>
+</ul>
+<p>This refers to things like business continuity plans, disaster recovery, and cyber resilience. Again, there is a wide range of solutions available here, and what is appropriate for you depends on your circumstances.&nbsp;</p>
+    </div>
+</div>
+        </div>
+        <div class="umb-block-grid__layout-item"
+             data-content-element-type-alias="furtherReadingBlock"
+             data-content-element-type-key="349dc532-9e3f-4f24-9fa4-2e5b86aa0eda"
+             data-element-udi="umb://element/cc22cd511d2c442da74afb5fc170213e"
+             data-col-span="12"
+             data-row-span="1"
+             style=" --umb-block-grid--item-column-span: 12; --umb-block-grid--item-row-span: 1; ">
+
+
+
+<further-Reading x-href="https://www.legislation.gov.uk/eur/2016/679/contents"
+                 x-target="_blank"
+                 x-title="Relevant provisions in the UK GDPR - See Article 32(1)(b) and Recital 83"
+                 x-location="External link"></further-Reading>
+        </div>
+        <div class="umb-block-grid__layout-item"
+             data-content-element-type-alias="richTextBlock"
+             data-content-element-type-key="d7ec1d8a-2a00-439e-95b4-9f3537f5ece4"
+             data-element-udi="umb://element/2544e3563c5f438dbf48e9e4fdc75976"
+             data-col-span="12"
+             data-row-span="1"
+             style=" --umb-block-grid--item-column-span: 12; --umb-block-grid--item-row-span: 1; ">
+
+<div class="rich-text">
+    <div class="prose prose-sm md:prose-base prose-h2:font-serif sm:prose-h2:border-l-10 sm:prose-h2:pl-3 prose-h3:font-serif sm:prose-lead:border-l-10 sm:prose-lead:pl-3 prose-hr:my-4 prose-h2:border-theme-yellow-light prose-lead:border-theme-yellow-light prose-theme-yellow">
+        <h3><a id="11"></a>What are the requirements for restoring availability and access to personal data?</h3>
+<p>You must have the ability to restore the availability and access to personal data in the event of a physical or technical incident in a ‘timely manner’.</p>
+<p>The UK&nbsp;GDPR does not define what a ‘timely manner’ should be. This therefore depends on:</p>
+<ul>
+<li>who you are;</li>
+<li>what systems you have; and</li>
+<li>the risk that may be posed to individuals if the personal data you process is unavailable for a period of time.</li>
+</ul>
+<p>The key point is that you have taken this into account during your information risk assessment and selection of security measures. For example, by ensuring that you have an appropriate backup process in place you will have some level of assurance that if your systems do suffer a physical or technical incident you can restore them, and therefore the personal data they hold, as soon as reasonably possible.</p>
+<div class="rt-example">
+<p><strong>Example</strong></p>
+<p>An organisation takes regular backups of its systems and the personal data held within them. It follows the well-known ‘3-2-1’ backup strategy: three copies, with two stored on different devices and one stored off-site.</p>
+<p>The organisation is targeted by a ransomware attack that results in the data being encrypted. This means that it is no longer able to access the personal data it holds.</p>
+<p>Depending on the nature of the organisation and the data it processes, this lack of availability can have significant consequences on individuals – and would therefore be a personal data breach under the UK&nbsp;GDPR.</p>
+<p>The ransomware has spread throughout the organisation’s systems, meaning that two of the backups are also unavailable. However, the third backup, being stored off-site, allows the organisation to restore its systems in a timely manner. There may still be a loss of personal data depending on when the off-site backup was taken, but having the ability to restore the systems means that whilst there will be some disruption to the service, the organisation are nevertheless able to comply with this requirement of the UK&nbsp;GDPR.</p>
+</div>
+    </div>
+</div>
+        </div>
+        <div class="umb-block-grid__layout-item"
+             data-content-element-type-alias="furtherReadingBlock"
+             data-content-element-type-key="349dc532-9e3f-4f24-9fa4-2e5b86aa0eda"
+             data-element-udi="umb://element/c64db4b18754424fb11411bc1688370e"
+             data-col-span="12"
+             data-row-span="1"
+             style=" --umb-block-grid--item-column-span: 12; --umb-block-grid--item-row-span: 1; ">
+
+
+
+<further-Reading x-href="https://www.legislation.gov.uk/eur/2016/679/contents"
+                 x-target="_blank"
+                 x-title="Relevant provisions in the UK GDPR - See Article 32(1)(c) and Recital 83"
+                 x-location="External link"></further-Reading>
+        </div>
+        <div class="umb-block-grid__layout-item"
+             data-content-element-type-alias="richTextBlock"
+             data-content-element-type-key="d7ec1d8a-2a00-439e-95b4-9f3537f5ece4"
+             data-element-udi="umb://element/6779156e98f7429a973199dba7575b9d"
+             data-col-span="12"
+             data-row-span="1"
+             style=" --umb-block-grid--item-column-span: 12; --umb-block-grid--item-row-span: 1; ">
+
+<div class="rich-text">
+    <div class="prose prose-sm md:prose-base prose-h2:font-serif sm:prose-h2:border-l-10 sm:prose-h2:pl-3 prose-h3:font-serif sm:prose-lead:border-l-10 sm:prose-lead:pl-3 prose-hr:my-4 prose-h2:border-theme-yellow-light prose-lead:border-theme-yellow-light prose-theme-yellow">
+        <h3><a id="12"></a>Are we required to ensure our security measures are effective?</h3>
+<p>Yes, the&nbsp;UK GDPR specifically requires you to have a process for regularly testing, assessing and evaluating the effectiveness of any measures you put in place. What these tests look like, and how regularly you do them, will depend on your own circumstances. However, it’s important to note that the requirement in the UK GDPR concerns your measures in their entirety, therefore whatever ‘scope’ you choose for this testing should be appropriate to what you are doing, how you are doing it, and the data that you are processing.</p>
+<p>Technically, you can undertake this through a number of techniques, such as vulnerability scanning and penetration testing. These are essentially ‘stress tests’ of your network and information systems, which are designed to reveal areas of potential risk and things that you can improve.</p>
+<p>In some industries, you are required to undertake tests of security measures on a regular basis. The UK GDPR now makes this an obligation for all organisations. Importantly, it does not specify the type of testing, nor how regularly you should undertake it. It depends on your organisation and the personal data you are processing.</p>
+<p>You can undertake testing internally or externally. In some cases it is recommended that both take place.</p>
+<p>Whatever form of testing you undertake, you should document the results and make sure that you act upon any recommendations, or have a valid reason for not doing so, and implement appropriate safeguards. This is particularly important if your testing reveals potential critical flaws that could result in a personal data breach.</p>
+    </div>
+</div>
+        </div>
+        <div class="umb-block-grid__layout-item"
+             data-content-element-type-alias="furtherReadingBlock"
+             data-content-element-type-key="349dc532-9e3f-4f24-9fa4-2e5b86aa0eda"
+             data-element-udi="umb://element/35794b90233a445d97858f69554a5064"
+             data-col-span="12"
+             data-row-span="1"
+             style=" --umb-block-grid--item-column-span: 12; --umb-block-grid--item-row-span: 1; ">
+
+
+
+<further-Reading x-href="https://www.legislation.gov.uk/eur/2016/679/contents"
+                 x-target="_blank"
+                 x-title="Relevant provisions in the UK GDPR - See Article 32(1)(d) and Recital 83"
+                 x-location="External link"></further-Reading>
+        </div>
+        <div class="umb-block-grid__layout-item"
+             data-content-element-type-alias="richTextBlock"
+             data-content-element-type-key="d7ec1d8a-2a00-439e-95b4-9f3537f5ece4"
+             data-element-udi="umb://element/02373a9906fa4820931c32ef3b20a27c"
+             data-col-span="12"
+             data-row-span="1"
+             style=" --umb-block-grid--item-column-span: 12; --umb-block-grid--item-row-span: 1; ">
+
+<div class="rich-text">
+    <div class="prose prose-sm md:prose-base prose-h2:font-serif sm:prose-h2:border-l-10 sm:prose-h2:pl-3 prose-h3:font-serif sm:prose-lead:border-l-10 sm:prose-lead:pl-3 prose-hr:my-4 prose-h2:border-theme-yellow-light prose-lead:border-theme-yellow-light prose-theme-yellow">
+        <h3>&nbsp;<a id="13"></a>What about codes of conduct and certification?</h3>
+<p>If your security measures include a product or service that adheres to a UK GDPR code of conduct or certification scheme, you may be able to use this as an element to demonstrate your compliance with the security principle. It is important that you check carefully that the code or certification scheme has been approved by the ICO.</p>
+    </div>
+</div>
+        </div>
+        <div class="umb-block-grid__layout-item"
+             data-content-element-type-alias="furtherReadingBlock"
+             data-content-element-type-key="349dc532-9e3f-4f24-9fa4-2e5b86aa0eda"
+             data-element-udi="umb://element/13cda93e97e74094bcb8d257d8a0b784"
+             data-col-span="12"
+             data-row-span="1"
+             style=" --umb-block-grid--item-column-span: 12; --umb-block-grid--item-row-span: 1; ">
+
+
+
+<further-Reading x-href="https://www.legislation.gov.uk/eur/2016/679/contents"
+                 x-target="_blank"
+                 x-title="Relevant provisions in the UK GDPR - See Article 32(3) and Recital 83"
+                 x-location="External link"></further-Reading>
+        </div>
+        <div class="umb-block-grid__layout-item"
+             data-content-element-type-alias="richTextBlock"
+             data-content-element-type-key="d7ec1d8a-2a00-439e-95b4-9f3537f5ece4"
+             data-element-udi="umb://element/9181e4dafa404e92ac33396d6f15541b"
+             data-col-span="12"
+             data-row-span="1"
+             style=" --umb-block-grid--item-column-span: 12; --umb-block-grid--item-row-span: 1; ">
+
+<div class="rich-text">
+    <div class="prose prose-sm md:prose-base prose-h2:font-serif sm:prose-h2:border-l-10 sm:prose-h2:pl-3 prose-h3:font-serif sm:prose-lead:border-l-10 sm:prose-lead:pl-3 prose-hr:my-4 prose-h2:border-theme-yellow-light prose-lead:border-theme-yellow-light prose-theme-yellow">
+        <p>&nbsp;</p>
+<div class="rt-block rt-green">
+<p><strong>Further reading</strong></p>
+<ul>
+<li><a href="/for-organisations/advice-and-services/codes-of-conduct/" title="Codes of conduct">Codes of conduct</a></li>
+<li><a href="/for-organisations/advice-and-services/certification-schemes/" title="Certification schemes">Certification </a></li>
+</ul>
+</div>
+<h3><a id="14"></a>What about our staff?</h3>
+<p>The GDPR requires you to ensure that anyone acting under your authority with access to personal data does not process that data unless you have instructed them to do so. It is therefore vital that your staff understand the importance of protecting personal data, are familiar with your security policy and put its procedures into practice.</p>
+<p>You should provide appropriate initial and refresher training, including:</p>
+<ul>
+<li>your responsibilities as a data controller under the UK&nbsp;GDPR;</li>
+<li>staff responsibilities for protecting personal data – including the possibility that they may commit criminal offences if they deliberately try to access or disclose these data without authority;</li>
+<li>the proper procedures to identify callers;</li>
+<li>the dangers of people trying to obtain personal data by deception (eg by pretending to be the individual whom the data concerns, or enabling staff to recognise ‘phishing’ attacks), or by persuading your staff to alter information when they should not do so; and</li>
+<li>any restrictions you place on the personal use of your systems by staff (eg to avoid virus infection or spam).</li>
+</ul>
+<p>Your staff training will only be effective if the individuals delivering it are themselves reliable and knowledgeable.</p>
+    </div>
+</div>
+        </div>
+        <div class="umb-block-grid__layout-item"
+             data-content-element-type-alias="furtherReadingBlock"
+             data-content-element-type-key="349dc532-9e3f-4f24-9fa4-2e5b86aa0eda"
+             data-element-udi="umb://element/d264e656854140228f75ed7c55c348a3"
+             data-col-span="12"
+             data-row-span="1"
+             style=" --umb-block-grid--item-column-span: 12; --umb-block-grid--item-row-span: 1; ">
+
+
+
+<further-Reading x-href="https://www.legislation.gov.uk/eur/2016/679/contents"
+                 x-target="_blank"
+                 x-title="Relevant provisions in the UK GDPR - See Article 32(4) and Recital 83"
+                 x-location="External link"></further-Reading>
+        </div>
+        <div class="umb-block-grid__layout-item"
+             data-content-element-type-alias="richTextBlock"
+             data-content-element-type-key="d7ec1d8a-2a00-439e-95b4-9f3537f5ece4"
+             data-element-udi="umb://element/74936de4fdf947c09c119130de98f8f1"
+             data-col-span="12"
+             data-row-span="1"
+             style=" --umb-block-grid--item-column-span: 12; --umb-block-grid--item-row-span: 1; ">
+
+<div class="rich-text">
+    <div class="prose prose-sm md:prose-base prose-h2:font-serif sm:prose-h2:border-l-10 sm:prose-h2:pl-3 prose-h3:font-serif sm:prose-lead:border-l-10 sm:prose-lead:pl-3 prose-hr:my-4 prose-h2:border-theme-yellow-light prose-lead:border-theme-yellow-light prose-theme-yellow">
+        <div class="rt-block rt-green">
+<p><strong>Other resources</strong></p>
+<p>The NCSC has detailed <a rel="noopener" href="https://www.ncsc.gov.uk/collection/10-steps-to-cyber-security" target="_blank" title="External link">technical guidance</a> in a number of areas that will be relevant to you whenever you process personal data. Some examples include:</p>
+<ul>
+<li><a rel="noopener" href="https://www.ncsc.gov.uk/collection/10-steps-to-cyber-security" target="_blank" title="External link">10 Steps to Cyber Security</a><span>–</span> The 10 Steps define and communicate an Information Risk Management Regime which can provide protection against cyber-attacks.</li>
+<li><a rel="noopener" href="https://www.ncsc.gov.uk/cyberessentials/overview" target="_blank" title="External link">The Cyber Essentials scheme</a> – this provides a set of basic technical controls that you can implement to guard against common cyber threats.</li>
+<li><a rel="noopener" href="https://www.ncsc.gov.uk/collection/risk-management-collection" target="_blank" title="External link">Risk management collection</a> – a collection of guidance on how to assess cyber risk.</li>
+</ul>
+<p>The government has produced relevant guidance on cybersecurity:</p>
+<ul>
+<li><a rel="noopener" href="https://www.ncsc.gov.uk/cyberaware/home" target="_blank" title="External link">CyberAware</a> – a cross-government awareness campaign developed by the Home Office, the Department for Digital, Culture, Media and Sport (‘DCMS’) and the NCSC.</li>
+<li><a href="https://www.ncsc.gov.uk/collection/small-business-guide" title="NCSC small business guide">NCSC small business guide</a>&nbsp;– cyber security guidance for small businesses.</li>
+</ul>
+<p>Technical guidance produced by the European Union Agency for Network and Information Security (ENISA) may also assist you:</p>
+<ul>
+<li>Data protection section at <a rel="noopener" href="https://www.enisa.europa.eu/" target="_blank" title="ENISA">ENISA’s website</a></li>
+</ul>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+    </div>
+</div>
+        </div>
+</div>
+
+</div>
+
+            </div>
+
+        
+
+    <nav class="print:hidden inline-flex flex-col items-start gap-5">
+
+
+            <a href="/for-organisations/uk-gdpr-guidance-and-resources/security/a-guide-to-data-security/encryption/" class="group text-primary">
+                <div class="flex items-center">
+                    <i class="icon icon-arrow-right text-4xl"></i>
+                    <span class="pl-3 flex flex-col">
+                        <span class="text-lg font-semibold">Next</span>
+                        <span class="text-sm underline underline-offset-4 decoration-dotted decoration-1 group-hover:decoration-solid">Encryption</span>
+                    </span>
+                </div>
+            </a>
+
+    </nav>
+
+    </div>
+</div>
+
+        </div>
+    </main>
+    
+<a href="#top"
+   id="button-top"
+   class="transition-opacity duration-500 flex items-center justify-center fixed right-4 bottom-4 z-10 rounded-full outline outline-white w-8 h-8 bg-primary opacity-0 hidden print:hidden">
+    <span class="icon icon-arrow-up text-white"></span>
+    <span class="sr-only">Back to top</span>
+</a>
+
+    <footer class="sticky top-[100vh] print:hidden">
+        
+<div class="lg:container px-4 border-t-2 border-dotted border-neutral-200 mt-6">
+    <div class="py-3">
+        <button type="button"
+                class="flex items-center group"
+                onClick="window.print()">
+            <i class="icon icon-printer text-lg text-white rounded-full p-1 bg-neutral-400"></i>
+            <span class="ml-2 text-sm text-link group-hover:underline">Print this page</span>
+        </button>
+    </div>
+</div>
+
+        <div class="bg-neutral-100">
+            <div class="lg:container px-4">
+                <div class="py-5 flex">
+                    <div class="hidden md:block flex-auto">
+                        
+    <ul class="grid gap-4 grid-cols-4">
+            <li>
+                    <div class="mb-3">
+                        <a href="/for-the-public/"
+                           class="font-serif text-serif-base text-link py-[0.2em] inline-block hover:underline">For the public</a>
+                    </div>
+                    <ul class="text-sm text-neutral-600 -mt-1">
+                            <li>
+                                <a href="/for-the-public/official-information/"
+                                   class="hover:underline min-h-[22px] mb-[5px] inline-block">Official information</a>
+                            </li>
+                            <li>
+                                <a href="/for-the-public/nuisance-calls/"
+                                   class="hover:underline min-h-[22px] mb-[5px] inline-block">Nuisance calls</a>
+                            </li>
+                    </ul>
+            </li>
+            <li>
+                    <div class="mb-3">
+                        <a href="/for-organisations/"
+                           class="font-serif text-serif-base text-link py-[0.2em] inline-block hover:underline">For organisations</a>
+                    </div>
+                    <ul class="text-sm text-neutral-600 -mt-1">
+                            <li>
+                                <a href="/for-organisations/uk-gdpr-guidance-and-resources/"
+                                   class="hover:underline min-h-[22px] mb-[5px] inline-block">UK GDPR guidance and resources</a>
+                            </li>
+                            <li>
+                                <a href="/for-organisations/foi/"
+                                   class="hover:underline min-h-[22px] mb-[5px] inline-block">Freedom of information</a>
+                            </li>
+                            <li>
+                                <a href="/for-organisations/eir-and-access-to-information/"
+                                   class="hover:underline min-h-[22px] mb-[5px] inline-block">EIR and access to information</a>
+                            </li>
+                            <li>
+                                <a href="/for-organisations/direct-marketing-and-privacy-and-electronic-communications/"
+                                   class="hover:underline min-h-[22px] mb-[5px] inline-block">Direct marketing</a>
+                            </li>
+                            <li>
+                                <a href="/for-organisations/advice-and-services/"
+                                   class="hover:underline min-h-[22px] mb-[5px] inline-block">Advice and services</a>
+                            </li>
+                    </ul>
+            </li>
+            <li>
+                    <div class="mb-3">
+                        <a href="/action-weve-taken/"
+                           class="font-serif text-serif-base text-link py-[0.2em] inline-block hover:underline">Action we&#x27;ve taken</a>
+                    </div>
+                    <ul class="text-sm text-neutral-600 -mt-1">
+                            <li>
+                                <a href="/action-weve-taken/enforcement/"
+                                   class="hover:underline min-h-[22px] mb-[5px] inline-block">Enforcement action</a>
+                            </li>
+                            <li>
+                                <a href="/action-weve-taken/decision-notices/"
+                                   class="hover:underline min-h-[22px] mb-[5px] inline-block">Decision notices</a>
+                            </li>
+                            <li>
+                                <a href="/action-weve-taken/audits-and-overview-reports/"
+                                   class="hover:underline min-h-[22px] mb-[5px] inline-block">Audits and overview reports</a>
+                            </li>
+                    </ul>
+            </li>
+            <li>
+                    <div class="mb-3">
+                        <a href="/about-the-ico/"
+                           class="font-serif text-serif-base text-link py-[0.2em] inline-block hover:underline">About the ICO</a>
+                    </div>
+                    <ul class="text-sm text-neutral-600 -mt-1">
+                            <li>
+                                <a href="/about-the-ico/what-we-do/register-of-fee-payers/"
+                                   class="hover:underline min-h-[22px] mb-[5px] inline-block">Download registration certificate</a>
+                            </li>
+                            <li>
+                                <a href="/about-the-ico/who-we-are/"
+                                   class="hover:underline min-h-[22px] mb-[5px] inline-block">Who we are</a>
+                            </li>
+                            <li>
+                                <a href="/about-the-ico/what-we-do/"
+                                   class="hover:underline min-h-[22px] mb-[5px] inline-block">What we do</a>
+                            </li>
+                            <li>
+                                <a href="/about-the-ico/media-centre/"
+                                   class="hover:underline min-h-[22px] mb-[5px] inline-block">Media centre</a>
+                            </li>
+                            <li>
+                                <a href="/about-the-ico/jobs/"
+                                   class="hover:underline min-h-[22px] mb-[5px] inline-block">Careers</a>
+                            </li>
+                            <li>
+                                <a href="/about-the-ico/modern-slavery-statement/"
+                                   class="hover:underline min-h-[22px] mb-[5px] inline-block">Modern Slavery Statement</a>
+                            </li>
+                    </ul>
+            </li>
+    </ul>
+
+                    </div>
+                    <div class="hidden md:block flex-auto mx-8 border-l-2 border-dotted border-neutral-400">
+                    </div>
+                    <div class="flex-auto">
+                        
+        <div class="font-serif text-serif-base text-link mb-3">Follow us</div>
+    <ul class="flex flex-col sm:flex-row md:flex-col sm:flex-wrap sm:gap-x-4 gap-y-2 text-sm text-neutral-600">
+
+                <li class="sm:flex-auto md:flex-none">
+
+                    <a class="flex items-center hover:underline"
+                       href="https://x.com/iconews"
+                       target="_blank">
+
+                            <img class="rounded-full mr-2" src="/media2/3e3molj2/x-logo-1.svg?width=24&amp;height=24&amp;v=1db7d782a8d9170" width="24" height="24" alt="Icon for the X @ICONews social link" loading="lazy" />
+
+                        <span>X @ICONews</span>
+
+                    </a>
+                </li>
+                <li class="sm:flex-auto md:flex-none">
+
+                    <a class="flex items-center hover:underline"
+                       href="http://www.youtube.com/user/icocomms"
+                       target="_blank">
+
+                            <img class="rounded-full mr-2" src="/media2/z3vdkkxj/youtube.svg?width=24&amp;height=24&amp;v=1db042ab32beee0" width="24" height="24" alt="Icon for the YouTube social link" loading="lazy" />
+
+                        <span>YouTube</span>
+
+                    </a>
+                </li>
+                <li class="sm:flex-auto md:flex-none">
+
+                    <a class="flex items-center hover:underline"
+                       href="http://linkedin.com/company/information-commissioner&#x27;s-office"
+                       target="_blank">
+
+                            <img class="rounded-full mr-2" src="/media2/cgdpvn4n/linkedin.svg?width=24&amp;height=24&amp;v=1db042ab2dda7d0" width="24" height="24" alt="Icon for the LinkedIn social link" loading="lazy" />
+
+                        <span>LinkedIn</span>
+
+                    </a>
+                </li>
+                <li class="sm:flex-auto md:flex-none">
+
+                    <a class="flex items-center hover:underline"
+                       href="http://facebook.com/ICOnews"
+                       target="_blank">
+
+                            <img class="rounded-full mr-2" src="/media2/g2nhkyjv/facebook.svg?width=24&amp;height=24&amp;v=1db03b86b4b62d0" width="24" height="24" alt="Icon for the Facebook social link" loading="lazy" />
+
+                        <span>Facebook</span>
+
+                    </a>
+                </li>
+                <li class="sm:flex-auto md:flex-none">
+
+                    <a class="flex items-center hover:underline"
+                       href="/about-the-ico/media-centre/e-newsletter/">
+
+                            <img class="rounded-full mr-2" src="/media2/thzeryz5/envelope.svg?width=24&amp;height=24&amp;v=1db03b86a1d4310" width="24" height="24" alt="Icon for the Subscribe to our e-newsletter social link" loading="lazy" />
+
+                        <span>Subscribe to our e-newsletter</span>
+
+                    </a>
+                </li>
+
+    </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-secondary">
+            <div class="lg:container px-4">
+                <div class="py-3 md:hidden">
+                    
+    <div class="font-serif text-center md:text-left text-white text-serif-base md:flex items-end md:pl-8 border-secondary border-dotted md:border-l-2">
+        <span>The ICO exists to empower you through information.</span>
+    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="bg-primary">
+            <div class="lg:container px-4">
+                <div class="pt-2">
+                    
+    <ul class="-mx-3 flex flex-wrap text-white text-sm md:text-base">
+                <li class="mx-3 my-1">
+                    <a href="/global/contact-us/"
+                       class="hover:underline">Contact us</a>
+                </li>
+                <li class="mx-3 my-1">
+                    <a href="/global/privacy-notice/"
+                       class="hover:underline">Privacy notice</a>
+                </li>
+                <li class="mx-3 my-1">
+                    <a href="/global/cookies/"
+                       class="hover:underline">Cookies</a>
+                </li>
+                <li class="mx-3 my-1">
+                    <a href="/global/accessibility/"
+                       class="hover:underline">Accessibility</a>
+                </li>
+                <li class="mx-3 my-1">
+                    <a href="/about-the-ico/who-we-are/wales-office/"
+                       class="hover:underline">Cymraeg</a>
+                </li>
+                <li class="mx-3 my-1">
+                    <a href="/global/disclaimer/"
+                       class="hover:underline">Disclaimer</a>
+                </li>
+                <li class="mx-3 my-1">
+                    <a href="/global/copyright-and-re-use-of-materials/"
+                       class="hover:underline">&#xA9; Copyright</a>
+                </li>
+    </ul>
+
+                </div>
+                <div class="py-5">
+                        <div class="md:flex md:items-center">
+
+            <div class="pr-4 mb-2 md:mb-0">
+                <img class="w-10" src="/media2/r34b3hma/ogl.png?width=40&amp;height=16&amp;v=1dc6f3b2af11af0" width="40" height="16" alt="OGL logo" loading="lazy" />
+            </div>
+        
+        <div class="prose prose-sm prose-white">
+            <p>All text content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>, except where otherwise stated.</p>
+        </div>
+    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script type="text/javascript" defer src="https://cc.cdn.civiccomputing.com/9/cookieControl-9.9.min.js"></script>
+    <script type="application/json" id="cookie-settings">
+        {"apiKey":"dbf86e044f3ab8c4df852af5c7c6ceb2dd7678dd","necessaryCookies":[".AspNetCore.Antiforgery.*","banner.*","language"],"statement":{"description":"For more detailed information, see our","name":"Cookies page","url":"/global/cookies/","updated":"17/12/2024"},"text":{"title":"Cookies on the ICO website","intro":"We use some essential cookies to make this site work. We\u0027d like to set analytics cookies to understand how you use this site. We may use services from Vimeo and YouTube that may also use cookies.","acceptSettings":"Accept non-essential cookies","rejectSettings":"Reject non-essential cookies","necessaryTitle":"Essential cookies","necessaryDescription":"These cookies are necessary for core functionality, such as security and network management. They always need to be on.","closeLabel":"Save and close","cornerButton":"Cookie options","on":"On","off":"Off"},"optionalCookies":[{"name":"analytics","label":"Analytics cookies","description":"We use Silktide to measure how you use the ICO website. These cookies collect information about how you got to the site, the pages you visit and how long you spend on each page, and what you click on."},{"name":"videoPlayer","label":"Video player cookies","description":"Some pages of the ICO website include videos hosted on Vimeo and YouTube. If you enable this setting, this may result in the video sharing platform collecting information about your viewing for analytics and advertising purposes. If you don\u2019t enable this setting, the pages will include external links instead."}]}
+    </script>
+
+    
+<script type="text/plain" id="silktide-settings">12d0c703744ea255b679f823daf1645f</script>
+    <script type="text/javascript" defer src="/js/index.js?v=lzVtN7n9HO9sYcg02GpHp-tXu9pXXxBMG3QvE9_Dloc"></script>
+    
+    
+
+    
+    
+</body>
+</html>
