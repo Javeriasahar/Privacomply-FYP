@@ -570,6 +570,18 @@ let cookieStats: CookieStats = {
   blocked: 0
 };
 
+const LIVE_COOKIES_KEY = 'privacomply-live-cookies';
+
+interface LiveCookieEvent {
+  name: string;
+  domain: string;
+  category: string;
+  blocked: boolean;
+  ts: number;
+}
+
+let liveEvents: LiveCookieEvent[] = [];
+
 let isInitialized = false;
 
 const loadPreferences = async () => {
@@ -632,10 +644,9 @@ const handleCookie = async (cookie: chrome.cookies.Cookie) => {
   if (!isInitialized) return;
 
   const label = classifyCookie(cookie);
-  console.info(`CookieBlock Debug: '${cookie.name}' classified as '${classIndexToString(label)}'`);
   const categoryName = classIndexToString(label);
+  console.info(`CookieBlock Debug: '${cookie.name}' classified as '${categoryName}'`);
 
-  // Update stats
   switch (label) {
     case 0: cookieStats.necessary++; break;
     case 1: cookieStats.functional++; break;
@@ -643,16 +654,21 @@ const handleCookie = async (cookie: chrome.cookies.Cookie) => {
     case 3: cookieStats.advertising++; break;
   }
 
-  // Check if should block
+  let wasBlocked = false;
   if (shouldBlockCookie(label)) {
     const removed = await removeCookie(cookie);
     if (removed) {
       cookieStats.blocked++;
+      wasBlocked = true;
       console.log(`CookieBlock: Blocked ${categoryName} cookie: ${cookie.name} (${cookie.domain})`);
     }
   } else {
     console.debug(`CookieBlock: Allowed ${categoryName} cookie: ${cookie.name} (${cookie.domain})`);
   }
+
+  // Push to in-memory list then flush to storage (avoids async read-write races)
+  liveEvents = [{ name: cookie.name, domain: cookie.domain.replace(/^\./, ''), category: categoryName, blocked: wasBlocked, ts: Date.now() }, ...liveEvents].slice(0, 100);
+  chrome.storage.local.set({ [LIVE_COOKIES_KEY]: { events: liveEvents, stats: { ...cookieStats } } });
 };
 
 // ============================================================================
@@ -714,6 +730,14 @@ const buildTrackerSummary = (tabId: number, tabUrl: string | undefined): object 
   });
 
   return { url: tabUrl || '', timestamp: new Date().toISOString(), trackers, summary };
+};
+
+// Restore persisted live cookie events on SW startup
+const restoreLiveEvents = async () => {
+  const result = await chrome.storage.local.get(LIVE_COOKIES_KEY);
+  const saved = result[LIVE_COOKIES_KEY] as { events?: LiveCookieEvent[]; stats?: typeof cookieStats } | undefined;
+  if (saved?.events) liveEvents = saved.events;
+  if (saved?.stats) Object.assign(cookieStats, saved.stats);
 };
 
 // Restore persisted tracker data on SW startup
@@ -811,6 +835,7 @@ const init = async () => {
     await loadPreferences();
     await loadTrackerMap();
     await restoreTrackerData();
+    await restoreLiveEvents();
     await setupFeatureResources();
     await loadForests();
 
@@ -844,7 +869,7 @@ init();
 // COMPLIANCE CHECK (long-running — must live in background, not popup)
 // ============================================================================
 
-const RAG_API_URL = 'http://localhost:8000/analyze';
+const RAG_API_URL = `${import.meta.env.BACKEND_URL}/analyze`;
 
 const performComplianceCheck = async (url: string, regulation: string): Promise<void> => {
   await chrome.storage.local.set({
@@ -937,6 +962,13 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
     case 'GET_COOKIE_STATS':
       sendResponse({ success: true, stats: cookieStats });
+      break;
+
+    case 'CLEAR_LIVE_COOKIES':
+      cookieStats = { necessary: 0, functional: 0, analytics: 0, advertising: 0, blocked: 0 };
+      liveEvents = [];
+      chrome.storage.local.set({ [LIVE_COOKIES_KEY]: { events: [], stats: { ...cookieStats } } });
+      sendResponse({ success: true });
       break;
 
     case 'GET_TRACKER_DATA':

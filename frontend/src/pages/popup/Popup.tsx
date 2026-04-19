@@ -1,14 +1,13 @@
 import React, { useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
-  Scan, ShieldCheck, ChevronRight, Cookie, BarChart3, Megaphone,
+  ShieldCheck, ChevronRight, Cookie, BarChart3, Megaphone,
   Shield, FileSearch, Loader2, CheckCircle2, XCircle, Network,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Badge } from '@/components/ui/badge';
 import { Header } from '@/components/layout/Header';
-import { ScanProgress } from '@/components/scan/ScanProgress';
 import { useScanStore } from '@/store/scanStore';
 import { useSettingsStore } from '@/store/settingsStore';
 import { useTheme } from '@/hooks/useTheme';
@@ -24,6 +23,19 @@ type ComplianceCheckState =
 
 // Which popup "view" is active
 type ActiveView = 'initial' | 'cookie' | 'compliance';
+
+interface LiveCookieEvent {
+  name: string;
+  domain: string;
+  category: string;
+  blocked: boolean;
+  ts: number;
+}
+
+interface LiveCookieData {
+  events: LiveCookieEvent[];
+  stats: { necessary: number; functional: number; analytics: number; advertising: number; blocked: number };
+}
 
 
 const CategoryRow = ({ cat }: { cat: RagCategoryResult }) => {
@@ -64,7 +76,7 @@ const CategoryRow = ({ cat }: { cat: RagCategoryResult }) => {
 
 const Popup = () => {
   const { t } = useTranslation();
-  const { isScanning, scanResults, startScan, currentUrl } = useScanStore();
+  const { currentUrl } = useScanStore();
   const { complianceStandards } = useSettingsStore();
 
   useTheme();
@@ -73,6 +85,7 @@ const Popup = () => {
   const [fullTabUrl, setFullTabUrl] = React.useState('');
   const [activeView, setActiveView] = React.useState<ActiveView>('initial');
   const [complianceState, setComplianceState] = React.useState<ComplianceCheckState>(null);
+  const [liveCookies, setLiveCookies] = React.useState<LiveCookieData | null>(null);
 
   const [regulation, setRegulation] = React.useState<'gdpr' | 'pdpa' | 'both'>(() => {
     const s = complianceStandards;
@@ -120,6 +133,10 @@ const Popup = () => {
         const newValue = changes['compliance_check'].newValue as ComplianceCheckState;
         setComplianceState(newValue);
       }
+      if ('privacomply-live-cookies' in changes) {
+        const newValue = changes['privacomply-live-cookies'].newValue as LiveCookieData;
+        setLiveCookies(newValue ?? null);
+      }
     },
     []
   );
@@ -130,9 +147,34 @@ const Popup = () => {
     return () => chrome.storage.onChanged.removeListener(handleStorageChange);
   }, [handleStorageChange]);
 
-  // ── Cookie protection scan ────────────────────────────────────────────────
+  // ── Load existing live cookie data on mount ───────────────────────────────
+  useEffect(() => {
+    if (typeof chrome === 'undefined' || !chrome.storage) return;
+    chrome.storage.local.get('privacomply-live-cookies', (data) => {
+      if (data['privacomply-live-cookies']) {
+        setLiveCookies(data['privacomply-live-cookies'] as LiveCookieData);
+      }
+    });
+  }, []);
+
+  // ── Poll live cookie storage while cookie view is active ─────────────────
+  useEffect(() => {
+    if (activeView !== 'cookie') return;
+    if (typeof chrome === 'undefined' || !chrome.storage) return;
+    const poll = () => {
+      chrome.storage.local.get('privacomply-live-cookies', (data) => {
+        if (data['privacomply-live-cookies']) {
+          setLiveCookies(data['privacomply-live-cookies'] as LiveCookieData);
+        }
+      });
+    };
+    poll(); // immediate read
+    const id = setInterval(poll, 500);
+    return () => clearInterval(id);
+  }, [activeView]);
+
+  // ── Cookie protection — show live view (preserves historical data) ─────────
   const handleScan = () => {
-    startScan(activeTabUrl);
     setActiveView('cookie');
   };
 
@@ -195,10 +237,11 @@ const Popup = () => {
     }
   };
 
-  const openSidePanel = () => {
-    if (typeof chrome !== 'undefined' && chrome.sidePanel) {
-      chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-        if (tabs[0]?.id) console.log('Open side panel for tab', tabs[0].id);
+
+  const openDetailedReport = () => {
+    if (typeof chrome !== 'undefined' && chrome.storage) {
+      chrome.storage.local.set({ options_active_tab: 'privacyScanner' }, () => {
+        chrome.runtime.openOptionsPage();
       });
     }
   };
@@ -210,16 +253,6 @@ const Popup = () => {
       });
     }
   };
-
-  // ── Cookie scan derived values ────────────────────────────────────────────
-  const isCompliant = scanResults ? scanResults.summary.blocked === 0 : false;
-  const totalCookies = scanResults ? scanResults.summary.total : 0;
-  const categoryData = scanResults ? [
-    { name: 'Necessary',   count: scanResults.summary.necessary,  icon: Shield,    color: 'emerald' },
-    { name: 'Functional',  count: scanResults.summary.functional,  icon: Cookie,    color: 'blue' },
-    { name: 'Analytics',   count: scanResults.summary.analytics,   icon: BarChart3, color: 'amber' },
-    { name: 'Advertising', count: scanResults.summary.advertising, icon: Megaphone, color: 'red' },
-  ] : [];
 
   // ── Compliance state aliases ──────────────────────────────────────────────
   const isComplianceScanning = complianceState?.status === 'scanning';
@@ -287,75 +320,101 @@ const Popup = () => {
           </div>
         )}
 
-        {/* ── COOKIE SCAN: SCANNING ── */}
-        {activeView === 'cookie' && isScanning && (
-          <div className="flex-1 flex flex-col justify-center items-center space-y-6 animate-in slide-in-from-bottom-5 duration-500">
-            <div className="relative">
-              <div className="absolute inset-0 bg-emerald-500/20 blur-xl rounded-full animate-pulse" />
-              <Scan className="w-20 h-20 text-emerald-500 animate-pulse relative z-10" />
-            </div>
-            <ScanProgress />
-          </div>
-        )}
-
-        {/* ── COOKIE SCAN: RESULTS ── */}
-        {activeView === 'cookie' && !isScanning && scanResults && (
-          <div className="flex-1 flex flex-col gap-4 animate-in fade-in duration-300">
-            <div className="flex items-center justify-between bg-gray-50 dark:bg-muted p-4 rounded-xl shadow-sm">
-              <div className="flex items-center gap-3">
-                {isCompliant ? (
-                  <div className="w-11 h-11 bg-emerald-100 dark:bg-emerald-500/20 rounded-xl flex items-center justify-center">
-                    <ShieldCheck className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
+        {/* ── COOKIE PROTECTION: LIVE FEED ── */}
+        {activeView === 'cookie' && (
+          <div className="flex-1 flex flex-col gap-3 min-h-0 animate-in fade-in duration-300">
+            {/* Header row */}
+            <div className="flex items-center justify-between flex-shrink-0">
+              <div className="flex items-center gap-2">
+                {(liveCookies?.stats.blocked ?? 0) > 0 ? (
+                  <div className="w-8 h-8 bg-amber-100 dark:bg-amber-500/20 rounded-lg flex items-center justify-center">
+                    <Shield className="w-4 h-4 text-amber-600 dark:text-amber-400" />
                   </div>
                 ) : (
-                  <div className="w-11 h-11 bg-amber-100 dark:bg-amber-500/20 rounded-xl flex items-center justify-center">
-                    <Shield className="w-6 h-6 text-amber-600 dark:text-amber-400" />
+                  <div className="w-8 h-8 bg-emerald-100 dark:bg-emerald-500/20 rounded-lg flex items-center justify-center">
+                    <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                   </div>
                 )}
                 <div>
-                  <h3 className={cn('font-semibold text-sm', isCompliant ? 'text-emerald-700 dark:text-emerald-400' : 'text-amber-700 dark:text-amber-400')}>
-                    {isCompliant ? 'All cookies allowed' : 'Blocking active'}
-                  </h3>
-                  <p className="text-xs text-gray-500 dark:text-muted-foreground mt-0.5">{scanResults.summary.blocked} cookies blocked</p>
+                  <p className="text-sm font-semibold text-gray-700 dark:text-foreground">Cookie Protection</p>
+                  <p className="text-xs text-muted-foreground">{liveCookies?.stats.blocked ?? 0} blocked · {(liveCookies?.stats.necessary ?? 0) + (liveCookies?.stats.functional ?? 0) + (liveCookies?.stats.analytics ?? 0) + (liveCookies?.stats.advertising ?? 0)} seen</p>
                 </div>
               </div>
-              <div className="text-right">
-                <span className="text-2xl font-bold text-gray-800 dark:text-foreground">{totalCookies}</span>
-                <span className="text-xs text-gray-500 dark:text-muted-foreground block">Total</span>
+              <div className="flex items-center gap-1.5">
+                <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="text-xs text-muted-foreground">Live</span>
+                <button
+                  onClick={() => setActiveView('initial')}
+                  className="ml-2 w-6 h-6 flex items-center justify-center rounded-full bg-gray-100 dark:bg-muted hover:bg-gray-200 dark:hover:bg-muted/80 text-gray-500 dark:text-muted-foreground transition-colors"
+                >
+                  <XCircle className="w-3.5 h-3.5" />
+                </button>
               </div>
             </div>
 
-            <div className="flex-1 min-h-0 flex flex-col">
-              <div className="flex items-center justify-between mb-3">
-                <h4 className="text-sm font-semibold text-gray-700 dark:text-foreground">Cookie Categories</h4>
-                <Badge variant="outline" className="text-xs font-normal rounded-lg border-gray-200 dark:border-border text-gray-600 dark:text-muted-foreground">
-                  {scanResults.summary.blocked} Blocked
-                </Badge>
-              </div>
-              <ScrollArea className="flex-1 pr-3 -mr-3">
-                <div className="space-y-2.5 pb-2">
-                  {categoryData.map((cat) => (
-                    <div key={cat.name} className="flex items-center justify-between p-3 bg-gray-50 dark:bg-muted rounded-xl shadow-sm">
-                      <div className="flex items-center gap-3">
-                        <div className={`w-9 h-9 rounded-lg bg-${cat.color}-100 dark:bg-${cat.color}-500/20 flex items-center justify-center`}>
-                          <cat.icon className={`w-4 h-4 text-${cat.color}-600 dark:text-${cat.color}-400`} />
-                        </div>
-                        <span className="text-sm font-medium text-gray-700 dark:text-foreground">{cat.name}</span>
-                      </div>
-                      <Badge variant="secondary" className="text-sm rounded-lg">{cat.count}</Badge>
-                    </div>
-                  ))}
+            {/* Category stat pills */}
+            <div className="grid grid-cols-4 gap-1.5 flex-shrink-0">
+              {[
+                { label: 'Necessary', count: liveCookies?.stats.necessary ?? 0, icon: Shield, color: 'emerald' },
+                { label: 'Functional', count: liveCookies?.stats.functional ?? 0, icon: Cookie, color: 'blue' },
+                { label: 'Analytics', count: liveCookies?.stats.analytics ?? 0, icon: BarChart3, color: 'amber' },
+                { label: 'Advertising', count: liveCookies?.stats.advertising ?? 0, icon: Megaphone, color: 'red' },
+              ].map(s => (
+                <div key={s.label} className="flex flex-col items-center gap-0.5 py-2 px-1 rounded-xl bg-gray-50 dark:bg-muted">
+                  <span className="text-base font-bold text-gray-800 dark:text-foreground">{s.count}</span>
+                  <span className="text-[9px] text-muted-foreground leading-tight text-center">{s.label}</span>
                 </div>
+              ))}
+            </div>
+
+            {/* Live event list */}
+            <div className="flex-1 min-h-0 flex flex-col">
+              <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-2 flex-shrink-0">Recent Activity</p>
+              <ScrollArea className="flex-1">
+                {!liveCookies || liveCookies.events.length === 0 ? (
+                  <div className="flex flex-col items-center justify-center h-32 gap-2 text-center">
+                    <div className="flex items-center gap-1.5">
+                      <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                      <p className="text-sm text-muted-foreground">Watching for cookies…</p>
+                    </div>
+                    <p className="text-xs text-muted-foreground">Browse the site to see activity here</p>
+                  </div>
+                ) : (
+                  <div className="space-y-1.5 pb-2">
+                    {liveCookies.events.map((event, i) => (
+                      <div key={i} className={cn(
+                        'flex items-center justify-between px-3 py-2 rounded-lg text-xs',
+                        event.blocked
+                          ? 'bg-red-50 dark:bg-red-500/10 border border-red-100 dark:border-red-500/20'
+                          : 'bg-gray-50 dark:bg-muted'
+                      )}>
+                        <div className="flex items-center gap-2 min-w-0">
+                          {event.blocked
+                            ? <XCircle className="w-3.5 h-3.5 text-red-500 flex-shrink-0" />
+                            : <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0" />
+                          }
+                          <div className="min-w-0">
+                            <p className="font-mono truncate text-gray-700 dark:text-foreground">{event.name}</p>
+                            <p className="text-muted-foreground truncate">{event.domain}</p>
+                          </div>
+                        </div>
+                        <Badge
+                          variant="secondary"
+                          className={cn(
+                            'text-[10px] px-1.5 py-0 ml-2 flex-shrink-0',
+                            event.blocked
+                              ? 'bg-red-100 text-red-700 dark:bg-red-500/20 dark:text-red-400'
+                              : 'bg-gray-100 dark:bg-muted text-muted-foreground'
+                          )}
+                        >
+                          {event.category}
+                        </Badge>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </ScrollArea>
             </div>
-
-            <Button
-              className="w-full mt-auto bg-[#1e2d3d] hover:bg-[#263a4d] text-white rounded-xl h-[44px] font-semibold text-sm transition-all duration-200 shadow-md"
-              onClick={openSidePanel}
-            >
-              {t('popup.viewReport', 'View Details')}
-              <ChevronRight className="w-4 h-4 ml-2" />
-            </Button>
           </div>
         )}
 
@@ -426,6 +485,13 @@ const Popup = () => {
                   </div>
                 </ScrollArea>
 
+                <Button
+                  className="w-full flex-shrink-0 bg-[#1e2d3d] hover:bg-[#263a4d] text-white rounded-xl h-[44px] font-semibold text-sm transition-all duration-200 shadow-md"
+                  onClick={openDetailedReport}
+                >
+                  View Detailed Report
+                  <ChevronRight className="w-4 h-4 ml-2" />
+                </Button>
               </div>
             )}
           </div>
